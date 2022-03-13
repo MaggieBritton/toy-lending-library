@@ -8236,6 +8236,16 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+typeface-lato@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-1.1.13.tgz#630ec75394d7fd2c63148005e6e23f2d8014e931"
+  integrity sha512-sTn5k3+fagGOi8FQfN2MPeUiTdvG0Z3LVqCaQdsg2sYa0fzNteFZussizdwiPxF45OoFN3zdU/ci+PtjolNSPQ==
+
+typeface-shadows-into-light-two@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-shadows-into-light-two/-/typeface-shadows-into-light-two-1.1.13.tgz#8ca3e78ec661c417d2ecb625ef03952a2a138333"
+  integrity sha512-O9cIAGhOnsTlN9lG3i0cMOuZwdNYkvxEJdeQVvclkl8zGIpMQo1vy9CFgIJsVYV+kt42Hv2/z0WOskHgtmW3Uw==
+
 unbox-primitive@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"
