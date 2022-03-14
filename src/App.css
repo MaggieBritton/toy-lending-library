@@ -2,6 +2,19 @@
   font-family: "Lato", sans-serif;
 }
 
+.banner {
+  background-color: #a60022;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.banner-text {
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
 h1 {
   font-family: 'Shadows Into Light Two', sans-serif;
 }
@@ -11,14 +24,15 @@ h1 {
   width: 100%;
 }
 
+
 .hero-text {
   text-align: center;
   margin: 5%;
 }
 
 @media (min-width: 768px) {
-    .hero {
-    position: relative;
+  .hero {
+  position: relative;
   }
 
   .hero-text {
@@ -27,9 +41,7 @@ h1 {
     left: 5%;
     text-align: left;
     margin: 0;
-  }
-
-  .hero-text p {
-    width: 33%;
+    display: inline-block;
+    width: 360px;
   }
 }
