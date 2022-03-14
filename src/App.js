@@ -1,9 +1,10 @@
 import './App.css';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="App">
-      <h1>Create Toy Lending Library Site Here</h1>
+      <Hero />
     </div>
   );
 }
