@@ -52,20 +52,13 @@ h1, h2 {
 }
 
 .whatIs-image {
-  width: 60%;
-  border-radius: 50%; 
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 5%; 
 }
 
-@media (max-width: 767px) {
-
-  .whatIs-container {
-    text-align: center;
-    margin: 5%;
-  }
-
-  .whatIs-header {
-    margin-top: 5%;
-  }
+.whatIs-text {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -82,51 +75,6 @@ h1, h2 {
     display: inline-block;
     width: 360px;
     z-index: 100;
-  }
-
-  .whatIs-container {
-    position: relative;
-    text-align: center;
-  }
-  
-  .whatIs-header {
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    z-index: 100; 
-  }
-  
-  .whatIs-body {
-    position: absolute;
-    width: 90%;
-    top: 80%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 100;
-  }
-}
-
-@media (min-width: 992px) {  
-  .whatIs-container {
-    
-    
-  }
-  
-  .whatIs-image {
-    width: 50%;
-  }
-
-  .whatIs-header {
-  
-
-  }
-
-  .whatIs-body {
-    
   }
 }
 
