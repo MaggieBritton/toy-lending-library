@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Banner from './Banner';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 
@@ -8,16 +8,32 @@ class Header extends Component {
     constructor(props) {
         super(props);
         
-        this.toggleNav = this.toggleNav.bind(this);
         this.state = {
-            isNavOpen: false
+            isNavOpen: false, 
+            isModalOpen: false
         };
+
+        this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
     }
 
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
         });
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    handleLogin(event) {
+        alert(`Username: ${this.username.value} Password: ${this.password.value} Remember: ${this.remember.checked}`);
+        this.toggleModal();
+        event.preventDefault();
     }
 
     render() {
@@ -46,13 +62,46 @@ class Header extends Component {
                                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             </NavItem>
                         </Nav>
-                        <Button className="login-btn ml-auto" size="sm">Login</Button>
+                        <Button onClick={this.toggleModal} className="btn ml-auto" color="warning">Login</Button>
                     </Collapse>
                 </div>
-            </Navbar>   
+            </Navbar>
+            
+            <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                <ModalHeader className="login-header" toggle={this.toggleModal}>Login</ModalHeader>
+                <ModalBody>
+                    <Form onSubmit={this.handleLogin}>
+                        <FormGroup>
+                            <Label htmlFor="username">Username</Label>
+                            <Input type="text" id="username" name="username" innerRef={input => this.username = input} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="passord">Password</Label>
+                            <Input type="password" id="password" name="password" innerRef={input => this.password = input} />
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" name="remember" innerRef={input => this.remember = input} />
+                                Remember me
+                            </Label>
+                        </FormGroup>
+                        <div className="mt-2">
+                            <Button type="submit" value="submit" color="warning">Login</Button>
+                        </div>
+                    </Form>
+                </ModalBody>
+            </Modal>   
       </React.Fragment>
     )
   }
 }
 
 export default Header;
+
+/* To Do:
+-change font for modal header to SIL2, not working?
+-validate login form (check online for how this was done pre react-redux-form)
+-link sign up button
+-add React Router for different views
+-add Featured toys section, start by adding featured attribute with Boolean to the toys inventory array
+*/
