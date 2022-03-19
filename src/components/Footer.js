@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SocialIcon } from 'react-social-icons';
 
 const Footer = (props) => {
     return(
@@ -24,9 +25,9 @@ const Footer = (props) => {
                             <li><Link className="footer-link" to='/contact'>Contact</Link></li>
                         </ul>
                     </div>
-                    <div className="col-12 col-md-4">
-                        <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i className="fa fa-facebook-square" /></a>
-                        <a className="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i className="fa fa-instagram" /></a>  
+                    <div className="col-12 col-md-4 text-center my-auto">
+                        <SocialIcon network="facebook" url="http://www.facebook.com" bgColor="#fff" className="m-1"></SocialIcon>
+                        <SocialIcon network="instagram" url="http://www.instagram.com" bgColor="#fff" className="m-1"></SocialIcon>
                     </div>
                 </div>
                 <div className="row">
