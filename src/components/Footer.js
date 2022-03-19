@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 
-const Footer = (props) => {
+const Footer = () => {
     return(
         <footer className="site-footer">
             <div className="container">
                 <div className="row pt-4">
-                    <div className="col-6 col-md-4 text-center">
+                    <div className="col-6 col-md-4 text-center my-auto">
                         <address>
                                 Toy Lending Library <br />
                                 123 Playthings Boulevard <br />
@@ -16,7 +16,7 @@ const Footer = (props) => {
                                 <a className="footer-link" href="mailto:toylendinglibrary@email.com">Email: toylendinglibrary@email.com</a>
                         </address>
                     </div>
-                    <div className="col-6 col-md-4 text-center">
+                    <div className="col-6 col-md-4 text-center my-auto">
                         <ul className="footer-link-list">
                             <li><Link className="footer-link" to='/home'>Home</Link></li>
                             <li><Link className="footer-link" to='/toys'>Toys</Link></li>

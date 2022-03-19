@@ -37,7 +37,7 @@
   background-color: #f3f3f3;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
   font-family: 'Shadows Into Light Two', sans-serif;
 }
 
@@ -76,6 +76,13 @@ h1, h2 {
     width: 360px;
     z-index: 100;
   }
+}
+.become-bg {
+  background-color: #f3f3f3;
+}
+
+.button {
+  background-color: #000;
 }
 
 .site-footer {
