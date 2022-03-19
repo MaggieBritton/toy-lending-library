@@ -10,7 +10,7 @@
 }
 
 .banner-text {
-  color: #ffffff;
+  color: #fff;
   font-size: 12px;
   margin-top: 10px;
 }
@@ -78,3 +78,26 @@ h1, h2 {
   }
 }
 
+.site-footer {
+  background-color: #a60022;
+  color: #fff;
+}
+
+.footer-link-list{
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: #fff;
+}
+
+.footer-link:hover {
+  color: #b1b1b1;
+  text-decoration: none;
+}
+
+.fa {
+  color: #fff;
+  border-radius: 50%;
+}
