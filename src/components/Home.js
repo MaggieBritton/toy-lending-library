@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Hero from './Hero';
+import FeaturedToys from './FeaturedToys';
 import WhatIs from './WhatIs';
 import BecomeAMember from './BecomeAMember';
 
@@ -8,6 +9,7 @@ class Home extends Component {
     return (
       <React.Fragment>
           <Hero />
+          <FeaturedToys />
           <WhatIs />
           <BecomeAMember />
       </React.Fragment>
