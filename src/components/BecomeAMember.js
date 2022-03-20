@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const BecomeAMember = () => {
@@ -9,7 +10,7 @@ const BecomeAMember = () => {
                 <div className="col">
                     <h4>Would you like to become a part of the TLL family?</h4>
                     <h4>Become a member today!</h4>
-                    <Button className="button">Sign Up</Button>
+                    <Link to='/signup'><Button className="button">Sign Up</Button></Link>
                 </div>
             </div>
         </div>

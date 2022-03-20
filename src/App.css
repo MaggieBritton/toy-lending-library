@@ -38,6 +38,12 @@
   color: #fff;
 }
 
+.login-header-text {
+  font-family: 'Shadows Into Light Two', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .navbar {
   background-color: #edeee9;
 }

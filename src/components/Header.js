@@ -68,7 +68,7 @@ class Header extends Component {
             </Navbar>
             
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                <ModalHeader className="login-header" toggle={this.toggleModal}>Login</ModalHeader>
+                <ModalHeader className="login-header" toggle={this.toggleModal}><span className="login-header-text">Login</span></ModalHeader>
                 <ModalBody>
                     <Form onSubmit={this.handleLogin}>
                         <FormGroup>
@@ -97,11 +97,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-/* To Do:
--change font for modal header to SIL2, not working?
--validate login form (check online for how this was done pre react-redux-form)
--link sign up button
--add React Router for different views
--add Featured toys section, start by adding featured attribute with Boolean to the toys inventory array
-*/

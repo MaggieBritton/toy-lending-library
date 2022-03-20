@@ -1,19 +1,19 @@
 import './App.css';
-import Hero from './components/Hero';
 import Header from './components/Header';
-import WhatIs from './components/WhatIs';
-import BecomeAMember from './components/BecomeAMember';
 import Footer from './components/Footer';
+import Home from './components/Home';
 import { BrowserRouter } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Hero />
-        <WhatIs />
-        <BecomeAMember />
+        <Switch>
+          <Route path='/home' component={Home} />
+          <Redirect to='/home' />
+        </Switch>
         <Footer />
       </div>
     </BrowserRouter>
