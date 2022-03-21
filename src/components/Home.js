@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Hero from './Hero';
 import FeaturedToys from './FeaturedToys';
 import WhatIs from './WhatIs';
 import BecomeAMember from './BecomeAMember';
 
-class Home extends Component {
-  render() {
+const Home = (props) => {
     return (
       <React.Fragment>
           <Hero />
-          <FeaturedToys />
+          <FeaturedToys inventoryItems = {props.inventoryItems} />
           <WhatIs />
           <BecomeAMember />
       </React.Fragment>
-
     );
-  }
 }
 
 export default Home;

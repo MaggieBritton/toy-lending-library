@@ -22,7 +22,11 @@ class App extends Component {
         <div className="App">
           <Header />
           <Switch>
-            <Route path='/home' render={() => <Home inventory={this.state.inventory} /> }  />
+            <Route path='/home' render={() => 
+              <Home 
+                inventoryItems={this.state.inventory.filter(inventoryItems => inventoryItems.featured)} 
+              /> }  
+            />
             <Redirect to='/home' />
           </Switch>
           <Footer />

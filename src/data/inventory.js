@@ -237,7 +237,6 @@ export const INVENTORY = [
         image: "/assets/inventoryImages/woodenAnimalsTrees.jpg",
         description: "Three wooden animals and five trees. Pair them with blocks and make a zoo.",
         featured: true,
-        featured: false,
         checkedOut: false
     },
     {
