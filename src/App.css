@@ -88,6 +88,40 @@ h1, h2, h3, h4 {
     z-index: 100;
   }
 }
+
+.featuredToy-card {
+  display: flex;
+  align-items: center;
+}
+
+.featuredToy-card, .featuredToy-image {
+  border-radius: 20px;
+}
+
+/* .featuredToy-overlay {
+  display: none;
+} */
+
+.featuredToy-title {
+  font-weight: 300;
+  font-size: 1.25em;
+  color: #fff;
+}
+
+.featuredToy-text {
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+}
+
+.featuredToy-btn {
+  background-color: #000;
+  border: none;
+  font-family: 'Shadows Into Light Two', sans-serif;
+}
+
+
+
 .become-bg {
   background-color: #edeee9;
 }
