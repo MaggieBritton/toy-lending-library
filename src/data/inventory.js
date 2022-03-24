@@ -241,7 +241,7 @@ export const INVENTORY = [
     },
     {
         id: 24,
-        name: "Wooden Blooks",
+        name: "Wooden Blocks",
         category: "building",
         age: ["3-6", "6-9"],
         image: "/assets/inventoryImages/woodenBlocks.jpg",
