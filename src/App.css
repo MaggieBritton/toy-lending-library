@@ -89,13 +89,16 @@ h1, h2, h3, h4 {
   }
 }
 
+.featuredToys-bg {
+  background-color: #edeee9;
+}
+
 .featuredToy-card {
   position: relative;
 }
 
 .featuredToy-card, .featuredToy-image {
   border-radius: 20px;
-  cursor: pointer;
 }
 
 .featuredToy-allText {
@@ -144,4 +147,12 @@ h1, h2, h3, h4 {
 .footer-link:hover {
   color: #b1b1b1;
   text-decoration: none;
+}
+
+.inventory-img {
+  width: 100%;
+}
+
+.toyInventory-bg {
+  background-color: #fdcb83;
 }

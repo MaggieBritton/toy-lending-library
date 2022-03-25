@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardImg, CardTitle, CardText, Button, CardImgOverlay } from 'reactstrap';
 
-const RenderFeaturedToys = ({inventoryItems}) => {
+const RenderToys = ({inventoryItems}) => {
     
 
     return(
-        <div className="row">{inventoryItems.map(item => 
+        <div className="row mt-4">{inventoryItems.map(item => 
             <div className="col-xs-12 col-sm-6 col-lg-3">
                 <Card className="featuredToy-card mb-3" key={item.id}>
                     <CardImg id="featuredToy-image" className="featuredToy-image" top src={item.image} alt={item.name} />
@@ -24,24 +24,33 @@ const RenderFeaturedToys = ({inventoryItems}) => {
             </div>)}
         </div>
     );
-};
+}; 
 
-const FeaturedToys = (props)=> {
+const Toys = (props)=> {
     return(
-        <div className="container-fluid featuredToys-bg">
-            <div className="row">
+        <div className="container-fluid">
+            <div className="row toyInventory-bg">
+                <div className="col my-auto">
+                    <h2 className="text-center">Toy Inventory</h2>
+                </div>
                 <div className="col">
-                    <h2 className="text-center my-4">Featured Toys</h2>
+                    <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Trucklk"/>
                 </div>
             </div>
-            <RenderFeaturedToys inventoryItems={props.inventoryItems} />
-            <div className="row">
-                <div className="col text-center">
-                    <Button className="button my-4">More Toys</Button>
-                </div>
-            </div>
+            <RenderToys inventoryItems={props.inventoryItems} />
         </div>    
     );
 };
 
-export default FeaturedToys;
+
+export default Toys;
+
+/* 
+
+To Do:
+Add filters to Toy Inventory Page
+Extract <Card> into its own component that Featured Toys and Toys (Inventory) share
+Code individual toy pages
+Code About Us, Sign Up, Contact pages
+
+*/

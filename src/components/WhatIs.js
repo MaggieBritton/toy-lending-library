@@ -3,7 +3,7 @@ import React from 'react';
 const WhatIs = () => {
     return (
         <div className="container">
-            <div className="row mt-md-5">
+            <div className="row mt-4">
                 <div className="col-xs-12 col-md-6">
                     <img className="whatIs-image" src="assets/siteImages/TLLBearSquare.jpg" alt="Teddy bear wearing aviator goggles and scarf." />
                 </div>

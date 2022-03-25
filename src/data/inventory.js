@@ -264,7 +264,7 @@ export const INVENTORY = [
         name: "Wooden Train",
         category: "vehicles",
         age: ["3-6", "6-9"],
-        image: "/assets/siteImages/heroTrain.jpg",
+        image: "/assets/inventoryImages/woodenTrain.jpg",
         description: "This wooden train set is complete with train, tracks, trees, signals, and a station. Re-configure the track over and over.",
         featured: false,
         checkedOut: false

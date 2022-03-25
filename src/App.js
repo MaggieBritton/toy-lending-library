@@ -5,6 +5,7 @@ import Home from './components/Home';
 import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { INVENTORY } from './data/inventory';
+import Toys from './components/Toys';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,11 @@ class App extends Component {
             <Route path='/home' render={() => 
               <Home 
                 inventoryItems={this.state.inventory.filter(inventoryItems => inventoryItems.featured)} 
+              /> }  
+            />
+            <Route path='/toys' render={() => 
+              <Toys 
+                inventoryItems={this.state.inventory} 
               /> }  
             />
             <Redirect to='/home' />
