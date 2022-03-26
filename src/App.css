@@ -156,3 +156,27 @@ h1, h2, h3, h4 {
 .toyInventory-bg {
   background-color: #fdcb83;
 }
+
+.filter-heading-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-btn {
+  border-radius: 25px;
+  margin: 0.5em 0.5em 0.5em 0;
+
+}
+
+.filter-heading {
+  font-family: 'Lato', sans-serif;
+}
+
+h3.filter-heading {
+  font-weight: 700;
+}
+
+h4.filter-heading {
+  font-weight: 300;
+  font-size: 1.25em;
+}
