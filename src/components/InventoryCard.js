@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardTitle, CardText, Button, CardImgOverlay } from 'reactstrap';
+import { Card, CardImg, CardTitle, Button, CardImgOverlay } from 'reactstrap';
 
 const InventoryCard = ({inventoryItems}) => {
     return (

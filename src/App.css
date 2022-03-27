@@ -1,3 +1,5 @@
+/* Sitewide Styles */
+
 * {
   font-family: "Lato", sans-serif;
 }
@@ -22,9 +24,6 @@
 }
 
 .login-btn {
-  background-color: #fdcb83;
-  border: none;
-  color: #000;
   padding: 5px 25px;
 }
 
@@ -51,6 +50,31 @@
 h1, h2, h3, h4 {
   font-family: 'Shadows Into Light Two', sans-serif;
 }
+
+.breadcrumb {
+  background-color: #edeee9;
+}
+
+.site-footer {
+  background-color: #a60022;
+  color: #fff;
+}
+
+.footer-link-list{
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: #fff;
+}
+
+.footer-link:hover {
+  color: #b1b1b1;
+  text-decoration: none;
+}
+
+/* HomePage Styles */
 
 .hero-image {
   opacity: 0.6;
@@ -93,6 +117,16 @@ h1, h2, h3, h4 {
   background-color: #edeee9;
 }
 
+.become-bg {
+  background-color: #edeee9;
+}
+
+.button {
+  background-color: #000;
+}
+
+/* InventoryCard Styles */
+
 .inventoryItem-card {
   position: relative;
 }
@@ -122,36 +156,11 @@ h1, h2, h3, h4 {
   font-family: 'Shadows Into Light Two', sans-serif;
 }
 
-.become-bg {
-  background-color: #edeee9;
-}
-
-.button {
-  background-color: #000;
-}
-
-.site-footer {
-  background-color: #a60022;
-  color: #fff;
-}
-
-.footer-link-list{
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-link {
-  color: #fff;
-}
-
-.footer-link:hover {
-  color: #b1b1b1;
-  text-decoration: none;
-}
-
 .inventory-img {
   width: 100%;
 }
+
+/* ToysPage Styles */
 
 .toyInventory-bg {
   background-color: #fdcb83;
@@ -165,7 +174,6 @@ h1, h2, h3, h4 {
 .filter-btn {
   border-radius: 25px;
   margin: 0.5em 0.5em 0.5em 0;
-
 }
 
 .filter-heading {
@@ -180,3 +188,16 @@ h4.filter-heading {
   font-weight: 300;
   font-size: 1.25em;
 }
+
+/* ContactPage Styles */
+
+.contact-bg {
+  background-color: rgb(201, 238, 219);
+}
+
+.contact-img {
+  width: 100%;
+}
+
+
+

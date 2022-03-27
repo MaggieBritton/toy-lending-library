@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { INVENTORY } from './data/inventory';
 import Toys from './components/Toys';
+import Contact from './components/Contact';
 import './App.css';
 
 class App extends Component {
@@ -28,11 +29,12 @@ class App extends Component {
                 inventoryItems={this.state.inventory.filter(inventoryItems => inventoryItems.featured)} 
               /> }  
             />
-            <Route path='/toys' render={() => 
+            <Route exact path='/toys' render={() => 
               <Toys 
                 inventoryItems={this.state.inventory} 
               /> }  
             />
+            <Route exact path='/contact' component={Contact} />  
             <Redirect to='/home' />
           </Switch>
           <Footer />

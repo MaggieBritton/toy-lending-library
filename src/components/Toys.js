@@ -9,15 +9,15 @@ const Toys = (props)=> {
                 <div className="col my-auto">
                     <h2 className="text-center">Toy Inventory</h2>
                 </div>
-                <div className="col">
-                    <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Trucklk"/>
+                <div className="col  pr-0">
+                    <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Truck"/>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 col-md-4 col-lg-3 mt-4 ml-2">
                     <div className="filter-heading-div mr-2">
                         <h3 className="filter-heading">Filters</h3>
-                        <a>clear all</a>   
+                        <Button outline color="danger" className="btn-sm filter-btn">clear all</Button>   
                     </div>
                     
                     
