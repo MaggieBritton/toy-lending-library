@@ -4,8 +4,8 @@ import { Card, CardImg, CardTitle, Button, CardImgOverlay } from 'reactstrap';
 const InventoryCard = ({inventoryItems}) => {
     return (
         <div className="row mt-4">{inventoryItems.map(item => 
-            <div className="col-xs-12 col-sm-6 col-lg-3"> 
-                <Card className="inventoryItem-card mb-3" key={item.id}>
+            <div key={item.id} className="col-xs-12 col-sm-6 col-lg-3"> 
+                <Card className="inventoryItem-card mb-3" >
                     <CardImg id="inventoryItem-image" className="inventoryItem-image" top src={item.image} alt={item.name} />
                     <CardImgOverlay id="inventoryItem-overlay" className="inventoryItem-overlay text-center">
                         <div className="inventoryItem-allText">
