@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import InventoryCard from './InventoryCard';
 
 const FeaturedToys = (props)=> {
@@ -13,7 +14,7 @@ const FeaturedToys = (props)=> {
             <InventoryCard inventoryItems={props.inventoryItems} />
             <div className="row">
                 <div className="col text-center">
-                    <Button className="button my-4">More Toys</Button>
+                    <Button className="button my-4"><Link>More Toys</Link></Button>
                 </div>
             </div>
         </div>    
@@ -21,3 +22,8 @@ const FeaturedToys = (props)=> {
 };
 
 export default FeaturedToys;
+
+/*
+
+Read article on linking to another part of the page using a Reactstrap Button and React Router Dom using Hooks
+*/
