@@ -1,9 +1,18 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import InventoryCard from './InventoryCard';
 
 const FeaturedToys = (props)=> {
+    
+    //The button at the bottom of this component uses the useHistory hook to route to the /toys view.
+
+    const history = useHistory();
+
+    function handleClick(path) {
+        history.push(path);
+    }
+    
     return(
         <div className="container-fluid featuredToys-bg">
             <div className="row">
@@ -14,7 +23,7 @@ const FeaturedToys = (props)=> {
             <InventoryCard inventoryItems={props.inventoryItems} />
             <div className="row">
                 <div className="col text-center">
-                    <Button className="button my-4"><Link>More Toys</Link></Button>
+                    <Button className="button my-4" onClick={()=> handleClick("/toys")}>More Toys</Button>
                 </div>
             </div>
         </div>    
@@ -22,8 +31,3 @@ const FeaturedToys = (props)=> {
 };
 
 export default FeaturedToys;
-
-/*
-
-Read article on linking to another part of the page using a Reactstrap Button and React Router Dom using Hooks
-*/
