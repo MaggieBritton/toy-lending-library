@@ -189,6 +189,15 @@ h4.filter-heading {
   font-size: 1.25em;
 }
 
+/* AboutPage Styles */
+.about-bg {
+  background-color: #71a3ee;
+}
+
+.about-img {
+  width: 100%;
+}
+
 /* ContactPage Styles */
 
 .contact-bg {

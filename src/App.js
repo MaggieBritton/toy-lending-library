@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { INVENTORY } from './data/inventory';
 import Toys from './components/Toys';
 import Contact from './components/Contact';
+import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
                   inventoryItems={this.state.inventory} 
                 /> }  
               />
+              <Route exact path='/about' component={About} />
               <Route exact path='/contact' component={Contact} />  
               <Redirect to='/home' />
             </Switch>

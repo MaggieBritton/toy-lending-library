@@ -117,7 +117,7 @@ class Contact extends Component {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="row mt-5 mb-5">
+                    <div className="row mt-4 mb-4">
                         <div className="col-12 col-md-4 mb-3">
                             <address>
                                     <strong>Toy Lending Library</strong> <br />
