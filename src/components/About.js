@@ -41,14 +41,14 @@ class About extends Component {
                             <p>Odio eu feugiat pretium nibh ipsum consequat nisl vel. Ultrices tincidunt arcu non sodales. Erat nam at lectus urna duis convallis convallis tellus id. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Facilisis gravida neque convallis a cras. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Non tellus orci ac auctor augue mauris augue. Ultrices neque ornare aenean euismod elementum. Suspendisse interdum consectetur libero id faucibus. Gravida dictum fusce ut placerat orci.</p>    
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="about-tab-container mb-4">
                         <Nav tabs>
                             <NavItem>
                                 <NavLink
-                                    className={classnames({ active: this.state.activeTab === '1' })}
+                                    className={classnames("about-tab-navlink", { active: this.state.activeTab === '1' })}
                                     onClick={() => { this.toggle('1'); }}
                                 >
-                                  Tab 1  
+                                  Mission  
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -56,7 +56,7 @@ class About extends Component {
                                     className={classnames({ active: this.state.activeTab === '2' })}
                                     onClick={() => { this.toggle('2'); }}
                                 >
-                                  Tab 2  
+                                  History  
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -64,12 +64,55 @@ class About extends Component {
                                     className={classnames({ active: this.state.activeTab === '3' })}
                                     onClick={() => { this.toggle('3'); }}
                                 >
-                                    Tab 3  
+                                    Volunteers  
                                 </NavLink>
                             </NavItem>
                         </Nav>
-                        <TabContent >
-
+                        <TabContent activeTab={this.state.activeTab}>
+                            <TabPane tabId="1">
+                                <Row>
+                                    <Col sm={12}>
+                                        <h3>Mission</h3>
+                                        <hr />
+                                        <Row>
+                                            <Col sm={6}>
+                                                <img className="about-img"src="assets/siteImages/biking.jpg" alt="Child Biking" />
+                                            </Col>
+                                            <Col>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="2">
+                                <Row>
+                                    <Col sm={12}>
+                                        <h3>History</h3>
+                                        <hr />
+                                        <Row>
+                                            <Col sm={6}>
+                                                <img className="about-img" src="assets/siteImages/playingInBallPit.jpg" alt="Child Playing in a Ball Pit" />
+                                            </Col>
+                                            <Col>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="3">
+                                <h3>Volunteers</h3>
+                                <hr />
+                                        <Row>
+                                            <Col sm={6}>
+                                                <img className="about-img" src="assets/siteImages/playingUkulele.jpg" alt="Child Playing Ukulele" />
+                                            </Col>
+                                            <Col>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                            </Col>
+                                        </Row>
+                            </TabPane>
                         </TabContent>
                     </div> 
                 </div>
