@@ -62,7 +62,7 @@ class Header extends Component {
                                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             </NavItem>
                         </Nav>
-                        <Button onClick={this.toggleModal} className="btn ml-auto" color="warning">Login</Button>
+                        <Button onClick={this.toggleModal}className="btn ml-auto" color="warning">Login</Button>
                     </Collapse>
                 </div>
             </Navbar>
@@ -97,3 +97,5 @@ class Header extends Component {
 }
 
 export default Header;
+
+/* Find a way (using hooks?) to collapse menu upon click only in mobile view...no reloading/strange attempted collapse in desktop view. */

@@ -208,6 +208,16 @@ h4.filter-heading {
   padding: 1em 0 1em 0;
 }
 
+/* SignUpPage Styles */
+
+.signup-bg {
+  background-color: #ac83fd;
+}
+
+.signup-img {
+  width: 100%;
+}
+
 /* ContactPage Styles */
 
 .contact-bg {

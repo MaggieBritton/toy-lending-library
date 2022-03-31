@@ -8,6 +8,7 @@ import { INVENTORY } from './data/inventory';
 import Toys from './components/Toys';
 import Contact from './components/Contact';
 import About from './components/About';
+import SignUp from './components/SignUp';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
@@ -38,6 +39,7 @@ class App extends Component {
                 /> }  
               />
               <Route exact path='/about' component={About} />
+              <Route exact path='/signup' component={SignUp} />
               <Route exact path='/contact' component={Contact} />  
               <Redirect to='/home' />
             </Switch>

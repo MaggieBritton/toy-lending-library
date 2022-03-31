@@ -75,8 +75,8 @@ class About extends Component {
                                         <h3>Mission</h3>
                                         <hr />
                                         <Row>
-                                            <Col sm={6}>
-                                                <img className="about-img"src="assets/siteImages/biking.jpg" alt="Child Biking" />
+                                            <Col sm={6} lg={4}>
+                                                <img className="about-img mb-4"src="assets/siteImages/biking.jpg" alt="Child Biking" />
                                             </Col>
                                             <Col>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
@@ -91,8 +91,8 @@ class About extends Component {
                                         <h3>History</h3>
                                         <hr />
                                         <Row>
-                                            <Col sm={6}>
-                                                <img className="about-img" src="assets/siteImages/playingInBallPit.jpg" alt="Child Playing in a Ball Pit" />
+                                            <Col sm={6} lg={4}>
+                                                <img className="about-img mb-4" src="assets/siteImages/playingInBallPit.jpg" alt="Child Playing in a Ball Pit" />
                                             </Col>
                                             <Col>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
@@ -105,8 +105,8 @@ class About extends Component {
                                 <h3>Volunteers</h3>
                                 <hr />
                                         <Row>
-                                            <Col sm={6}>
-                                                <img className="about-img" src="assets/siteImages/playingUkulele.jpg" alt="Child Playing Ukulele" />
+                                            <Col sm={6} lg={4}>
+                                                <img className="about-img mb-4" src="assets/siteImages/playingUkulele.jpg" alt="Child Playing Ukulele" />
                                             </Col>
                                             <Col>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
