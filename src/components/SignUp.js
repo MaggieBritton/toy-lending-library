@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardBody, CardTitle, CardGroup, CardSubtitle, Button, Form, FormGroup, Label, Input, Col, FormFeedback } from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardGroup, CardSubtitle, Button, Form, FormGroup, Label, Input, Row, Col, FormFeedback } from 'reactstrap';
 
 class SignUp extends Component {
     constructor(props){
@@ -21,7 +21,8 @@ class SignUp extends Component {
                 firstName: false,
                 lastName: false,
                 phoneNum: false,
-                email: false
+                email: false, 
+                zip: false
             }
         };
 
@@ -50,24 +51,31 @@ class SignUp extends Component {
             lastName: '',
             phoneNum: '',
             email: '',
-            contactType: 'By Email',
-            message: '',
+            address: '',
+            apartment: '',
+            city: '',
+            state: '',
+            zip: '',
+            child1Name: '',
+            child1Age: '',
             touched: {
                 firstName: false,
                 lastName: false,
                 phoneNum: false,
-                email: false
+                email: false, 
+                zip: false
             }
         });
     }
 
-    validate(firstName, lastName, phoneNum, email) {
+    validate(firstName, lastName, phoneNum, email, zip) {
 
         const errors = {
             firstName: '',
             lastName: '',
             phoneNum: '',
-            email: ''
+            email: '',
+            zip: ''
         };
 
         if (this.state.touched.firstName) {
@@ -96,6 +104,11 @@ class SignUp extends Component {
             errors.email = 'Invalid email.';
         }
 
+        const zipReg = /\d{5}/;
+        if (this.state.touched.zip && !zipReg.test(zip)) {
+            errors.zip = 'Invalid zip code.';
+        }
+
         return errors;
     }
 
@@ -107,7 +120,7 @@ class SignUp extends Component {
 
     render () {
         
-        const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phoneNum, this.state.email);
+        const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phoneNum, this.state.email, this.state.zip);
         
         return (
             <React.Fragment>    
@@ -149,154 +162,166 @@ class SignUp extends Component {
                     </div>
                     <div className="row">
                         <div className="col">
-                        <Form onSubmit={this.handleSubmit}>
-                                <FormGroup row>
-                                    <Label htmlFor="firstName" md={2}>Parent/Guardian First Name</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="firstName" name="firstName" placeholder="First Name"
-                                        value={this.state.firstName}
-                                        invalid={errors.firstName}
-                                        onBlur={this.handleBlur("firstName")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.firstName}</FormFeedback>
+                            <Form onSubmit={this.handleSubmit}>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="firstName">Parent/Guardian First Name</Label>
+                                            <Input required type="text" id="firstName" name="firstName" placeholder="First Name"
+                                            value={this.state.firstName}
+                                            invalid={errors.firstName}
+                                            onBlur={this.handleBlur("firstName")}
+                                            onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.firstName}</FormFeedback>
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="lastName" md={2}>Parent/Guardian Last Name</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="lastName" name="lastName" placeholder="Last Name"
-                                        value={this.state.lastName}
-                                        invalid={errors.lastName}
-                                        onBlur={this.handleBlur("lastName")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.lastName}</FormFeedback>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="lastName">Parent/Guardian Last Name</Label>
+                                            <Input required type="text" id="lastName" name="lastName" placeholder="Last Name"
+                                            value={this.state.lastName}
+                                            invalid={errors.lastName}
+                                            onBlur={this.handleBlur("lastName")}
+                                            onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.lastName}</FormFeedback>
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="address" md={2}>Address</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="address" name="address" placeholder="Address" value={this.state.address} onChange={this.handleInputChange}>
-                                        </Input>
+                                </Row>    
+                                <Row form>
+                                    <Col xs={8}>
+                                        <FormGroup>
+                                            <Label htmlFor="address">Address</Label>
+                                            <Input required type="text" id="address" name="address" placeholder="Address" value={this.state.address} onChange={this.handleInputChange} 
+                                            />
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="apartment" md={2}>Apartment (optional)</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input type="text" id="apartment" name="apartment" placeholder="Apartment (optional)" value={this.state.apartment} onChange={this.handleInputChange}>
-                                        </Input>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="apartment">Apt. (optional)</Label>
+                                            <Input type="text" id="apartment" name="apartment" placeholder="Apt." value={this.state.apartment} onChange={this.handleInputChange} 
+                                            />
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="city" md={2}>City</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="city" name="city" placeholder="City" value={this.state.city} onChange={this.handleInputChange}>
-                                        </Input>
+                                </Row>
+                                <Row form>
+                                    <Col xs={6}>
+                                        <FormGroup>
+                                            <Label htmlFor="city">City</Label>
+                                            <Input required type="text" id="city" name="city" placeholder="City" value={this.state.city} onChange={this.handleInputChange} />
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="state" md={2}>State</Label>
-                                    <Col md={4}>
-                                        <Input required type="select" id="state" name="state" value={this.state.state} onChange={this.handleInputChange}>
-                                            <option>AL</option>
-                                            <option>AK</option>
-                                            <option>AZ</option>
-                                            <option>AR</option>
-                                            <option>CA</option>
-                                            <option>CO</option>
-                                            <option>CT</option>
-                                            <option>DE</option>
-                                            <option>DC</option>
-                                            <option>FL</option>
-                                            <option>GA</option>
-                                            <option>HI</option>
-                                            <option>ID</option>
-                                            <option>IL</option>
-                                            <option>IN</option>
-                                            <option>IA</option>
-                                            <option>KS</option>
-                                            <option>KY</option>
-                                            <option>LA</option>
-                                            <option>ME</option>
-                                            <option>MD</option>
-                                            <option>MA</option>
-                                            <option>MI</option>
-                                            <option>MN</option>
-                                            <option>MS</option>
-                                            <option>MO</option>
-                                            <option>MT</option>
-                                            <option>NE</option>
-                                            <option>NV</option>
-                                            <option>NH</option>
-                                            <option>NJ</option>
-                                            <option>NM</option>
-                                            <option>NY</option>
-                                            <option>NC</option>
-                                            <option>ND</option>
-                                            <option>OH</option>
-                                            <option>OK</option>
-                                            <option>OR</option>
-                                            <option>PA</option>
-                                            <option>RI</option>
-                                            <option>SC</option>
-                                            <option>SD</option>
-                                            <option>TN</option>
-                                            <option>TX</option>
-                                            <option>UT</option>
-                                            <option>VT</option>
-                                            <option>VA</option>
-                                            <option>WA</option>
-                                            <option>WV</option>
-                                            <option>VI</option>
-                                            <option>WY</option>
-                                        </Input>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="state">State</Label>
+                                            <Input required type="select" id="state" name="state" value={this.state.state} onChange={this.handleInputChange}>
+                                                <option>AL</option>
+                                                <option>AK</option>
+                                                <option>AZ</option>
+                                                <option>AR</option>
+                                                <option>CA</option>
+                                                <option>CO</option>
+                                                <option>CT</option>
+                                                <option>DE</option>
+                                                <option>DC</option>
+                                                <option>FL</option>
+                                                <option>GA</option>
+                                                <option>HI</option>
+                                                <option>ID</option>
+                                                <option>IL</option>
+                                                <option>IN</option>
+                                                <option>IA</option>
+                                                <option>KS</option>
+                                                <option>KY</option>
+                                                <option>LA</option>
+                                                <option>ME</option>
+                                                <option>MD</option>
+                                                <option>MA</option>
+                                                <option>MI</option>
+                                                <option>MN</option>
+                                                <option>MS</option>
+                                                <option>MO</option>
+                                                <option>MT</option>
+                                                <option>NE</option>
+                                                <option>NV</option>
+                                                <option>NH</option>
+                                                <option>NJ</option>
+                                                <option>NM</option>
+                                                <option>NY</option>
+                                                <option>NC</option>
+                                                <option>ND</option>
+                                                <option>OH</option>
+                                                <option>OK</option>
+                                                <option>OR</option>
+                                                <option>PA</option>
+                                                <option>RI</option>
+                                                <option>SC</option>
+                                                <option>SD</option>
+                                                <option>TN</option>
+                                                <option>TX</option>
+                                                <option>UT</option>
+                                                <option>VT</option>
+                                                <option>VA</option>
+                                                <option>WA</option>
+                                                <option>WV</option>
+                                                <option>WI</option>
+                                                <option>WY</option>
+                                            </Input>
+                                        </FormGroup>
                                     </Col>
-                                    <Label htmlFor="zip" md={2}>Zip code</Label>
-                                    <Col md={4}>
-                                        <Input required type="text" id="zip" name="zip" placeholder="Zip Code" value={this.state.zip} onChange={this.handleInputChange}>
-                                        </Input>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="zip">Zip code</Label>
+                                            <Input required type="text" id="zip" name="zip" placeholder="Zip Code" value={this.state.zip} invalid={errors.zip}
+                                            onBlur={this.handleBlur("zip")} onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.zip}</FormFeedback>
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="phoneNum" md={2}>Phone Number</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="tel" id="phoneNum" name="phoneNum" placeholder="Phone Number"
-                                        value={this.state.phoneNum}
-                                        invalid={errors.phoneNum}
-                                        onBlur={this.handleBlur("phoneNum")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.phoneNum}</FormFeedback>
+                                </Row>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="phoneNum">Phone Number</Label>
+                                            <Input required type="tel" id="phoneNum" name="phoneNum" placeholder="Phone Number"
+                                            value={this.state.phoneNum}
+                                            invalid={errors.phoneNum}
+                                            onBlur={this.handleBlur("phoneNum")}
+                                            onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.phoneNum}</FormFeedback>
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="email" md={2}>Email</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input type="email" id="email" name="email" placeholder="Email"
-                                        value={this.state.email}
-                                        invalid={errors.email}
-                                        onBlur={this.handleBlur("email")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.email}</FormFeedback>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="email">Email</Label>
+                                            <Input type="email" id="email" name="email" placeholder="Email"
+                                            value={this.state.email}
+                                            invalid={errors.email}
+                                            onBlur={this.handleBlur("email")}
+                                            onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.email}</FormFeedback>
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="child1Name" md={2}>Child 1 Name</Label>
-                                    <Col md={10}>
-                                        <Input required type="text" id="child1Name" name="child1Name" placeholder="Child 1 Name" value={this.state.child1Name} onChange={this.handleInputChange}>
-                                        </Input>
+                                </Row>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="child1Name">Child 1 Name</Label>
+                                            <Input required type="text" id="child1Name" name="child1Name" placeholder="Child Name" value={this.state.child1Name} onChange={this.handleInputChange} />
+                                        </FormGroup>
                                     </Col>
-                                    <Label htmlFor="child1Age" md={2}>Child 1 Age</Label>
-                                    <Col md={10}>
-                                        <Input required type="text" id="child1Age" name="child1Age" value={this.state.child1Age} onChange={this.handleInputChange}>
-                                        </Input>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label htmlFor="child1Age">Age</Label>
+                                            <Input required type="text" id="child1Age" name="child1Age" placeholder="Age" value={this.state.child1Age} onChange={this.handleInputChange} />
+                                        </FormGroup>
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md={{size: 10, offset: 2}}>
+                                </Row>
+                                <Row form>
+                                    <Col>
                                         <Button type="submit" color="warning">
-                                            Submit
+                                                Sign Up
                                         </Button>
                                     </Col>
-                                </FormGroup>
+                                </Row>
                             </Form>
                         </div>
                     </div>
@@ -311,11 +336,6 @@ export default SignUp;
 /* 
 
 Create a sign-up form including the following:
-first name
-last name
-address
-phone number
-email
 first names and ages of children
 checkbox to agree with policy about toy use, care, and cleaning 
 checkbox to agree with policy about length of checkout and possible renewal of items
