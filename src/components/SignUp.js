@@ -23,6 +23,7 @@ class SignUp extends Component {
             child3Age: '',
             careAndUsePolicy: false,
             checkoutPolicy: false,
+            membership: '',
             touched: {
                 firstName: false,
                 lastName: false,
@@ -47,11 +48,11 @@ class SignUp extends Component {
     }
 
     handleSubmit(event) {
-        //below console.log and alert simply verify that the form is working
+        //below console.log and alert simply verify that the form is working.
         console.log('Current state is: ' + JSON.stringify(this.state));
         alert('Current state is: ' + JSON.stringify(this.state));
         event.preventDefault();
-        //below setState clears form inputs after submit
+        //below setState clears form inputs after submit.
         this.setState({
             firstName: '',
             lastName: '',
@@ -70,6 +71,7 @@ class SignUp extends Component {
             child3Age: '',
             careAndUsePolicy: false,
             checkoutPolicy: false,
+            membership: '',
             touched: {
                 firstName: false,
                 lastName: false,
@@ -78,6 +80,10 @@ class SignUp extends Component {
                 zip: false
             }
         });
+
+        //below unchecks the two checkboxes when the form is submitted.
+        document.getElementById("careAndUsePolicy").checked = false;
+        document.getElementById("checkoutPolicy").checked = false;
     }
 
     validate(firstName, lastName, phoneNum, email, zip) {
@@ -148,32 +154,38 @@ class SignUp extends Component {
                 </div>
                 <div className="container my-4">
                     <div className="row">
-                        <div className="col">
+                        <div className="col-lg-8 offset-lg-2">
                             <p>There are two convenient ways to sign up for a TLL membership. Either visit our location in downtown Big City or select a plan below, fill out the sign-up form, and pay with PayPal.</p>
                         </div>
                     </div>
                     <div className="row">
-                        <CardGroup>
-                            <Card>
-                                <CardBody className="text-center">
-                                    <CardTitle><h4>3-Month Membership</h4></CardTitle>
-                                    <CardSubtitle><strong>$15</strong></CardSubtitle>
-                                    <CardText>New to the area? Not sure if a TLL membership is a good fit for your family? This three-month trial will give you ample time to decide if a yearly memebership is for you.</CardText>
-                                    <Button>Select</Button>
-                                </CardBody>
-                            </Card>
-                            <Card>
-                                <CardBody className="text-center">
-                                    <CardTitle><h4>Yearly Membership</h4></CardTitle>
-                                    <CardSubtitle><strong>$50</strong></CardSubtitle>
-                                    <CardText>Take full advantage of our services with a yearly membership. Let your child(ren) explore our large selection of toys without making them a permanent fixure in your home.</CardText>
-                                    <Button>Select</Button>
-                                </CardBody>
-                            </Card>
-                        </CardGroup>
+                        <div className="col-lg-8 offset-lg-2">
+                            <CardGroup>
+                                <Card>
+                                    <CardBody className="text-center">
+                                        <CardTitle><h4>3-Month Membership</h4></CardTitle>
+                                        <CardSubtitle><strong>$15</strong></CardSubtitle>
+                                        <CardText>New to the area? Not sure if a TLL membership is a good fit for your family? This three-month trial will give you ample time to decide if a yearly memebership is for you.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card>
+                                    <CardBody className="text-center">
+                                        <CardTitle><h4>Yearly Membership</h4></CardTitle>
+                                        <CardSubtitle><strong>$50</strong></CardSubtitle>
+                                        <CardText>Take full advantage of our services with a yearly membership. Let your child(ren) explore our large selection of toys without making them a permanent fixure in your home.</CardText>
+                                    </CardBody>
+                                </Card>
+                            </CardGroup>
+                        </div>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col-lg-8 offset-lg-2">
+                            <h2>Sign-Up Form</h2>
+                            <hr />
+                        </div>
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col-lg-8 offset-lg-2">
                             <Form onSubmit={this.handleSubmit}>
                                 <Row form>
                                     <Col>
@@ -400,6 +412,16 @@ class SignUp extends Component {
                                 </Row>
                                 <Row form>
                                     <Col>
+                                        <Label htmlFor="membership">Select your TLL membership plan.</Label>
+                                        <Input required type="select" id="membership" name="membership" value={this.state.membership} onChange={this.handleInputChange}>
+                                            <option disabled></option>
+                                            <option>3-month Membership ($15)</option>
+                                            <option>Yearly Membership ($50)</option>
+                                        </Input>
+                                    </Col>
+                                </Row>
+                                <Row form className="mt-3">
+                                    <Col>
                                         <FormGroup check>
                                             <Label check>
                                                 <Input required type="checkbox" id="careAndUsePolicy" name="careAndUsePolicy" value={this.state.careAndUsePolicy} onChange={this.handleInputChange} />{' '}
@@ -408,7 +430,7 @@ class SignUp extends Component {
                                         </FormGroup>
                                     </Col>
                                 </Row>
-                                <Row form>
+                                <Row form className="mt-3">
                                     <Col>
                                         <FormGroup check>
                                             <Label check>
@@ -420,7 +442,7 @@ class SignUp extends Component {
                                 </Row>
                                 <Row form>
                                     <Col>
-                                        <Button type="submit" color="warning">
+                                        <Button className="mt-3" type="submit" color="warning">
                                                 Sign Up
                                         </Button>
                                     </Col>
@@ -435,11 +457,3 @@ class SignUp extends Component {
 }
 
 export default SignUp;
-
-/* 
-
-Create a sign-up form including the following:
-how do I make the checkboxes uncheck when the form is reset?
-radio buttons with plan selection (3-month or 1-year)
-
-*/
