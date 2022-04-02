@@ -17,6 +17,12 @@ class SignUp extends Component {
             zip: '',
             child1Name: '',
             child1Age: '',
+            child2Name: '',
+            child2Age: '',
+            child3Name: '',
+            child3Age: '',
+            careAndUsePolicy: false,
+            checkoutPolicy: false,
             touched: {
                 firstName: false,
                 lastName: false,
@@ -33,7 +39,7 @@ class SignUp extends Component {
     handleInputChange(event) {
         const target = event.target;
         const name = target.name;
-        const value = target.value;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
 
         this.setState({
             [name]: value
@@ -58,6 +64,12 @@ class SignUp extends Component {
             zip: '',
             child1Name: '',
             child1Age: '',
+            child2Name: '',
+            child2Age: '',
+            child3Name: '',
+            child3Age: '',
+            careAndUsePolicy: false,
+            checkoutPolicy: false,
             touched: {
                 firstName: false,
                 lastName: false,
@@ -214,6 +226,7 @@ class SignUp extends Component {
                                         <FormGroup>
                                             <Label htmlFor="state">State</Label>
                                             <Input required type="select" id="state" name="state" value={this.state.state} onChange={this.handleInputChange}>
+                                                <option disabled></option>
                                                 <option>AL</option>
                                                 <option>AK</option>
                                                 <option>AZ</option>
@@ -302,16 +315,106 @@ class SignUp extends Component {
                                     </Col>
                                 </Row>
                                 <Row form>
-                                    <Col>
+                                    <Col xs={9}>
                                         <FormGroup>
-                                            <Label htmlFor="child1Name">Child 1 Name</Label>
-                                            <Input required type="text" id="child1Name" name="child1Name" placeholder="Child Name" value={this.state.child1Name} onChange={this.handleInputChange} />
+                                            <Label htmlFor="child1Name">(1) Child's Full Name</Label>
+                                            <Input required type="text" id="child1Name" name="child1Name" placeholder="Child's Name" value={this.state.child1Name} onChange={this.handleInputChange} />
                                         </FormGroup>
                                     </Col>
-                                    <Col>
+                                    <Col xs={3}>
                                         <FormGroup>
                                             <Label htmlFor="child1Age">Age</Label>
-                                            <Input required type="text" id="child1Age" name="child1Age" placeholder="Age" value={this.state.child1Age} onChange={this.handleInputChange} />
+                                            <Input required type="select" id="child1Age" name="child1Age" value={this.state.child1Age} onChange={this.handleInputChange}>
+                                                <option disabled></option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </Input>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row form>
+                                    <Col xs={9}>
+                                        <FormGroup>
+                                            <Label htmlFor="child2Name">(2) Child's Full Name (optional)</Label>
+                                            <Input type="text" id="child2Name" name="child2Name" placeholder="Child's Name" value={this.state.child2Name} onChange={this.handleInputChange} />
+                                        </FormGroup>
+                                    </Col>
+                                    <Col xs={3}>
+                                        <FormGroup>
+                                            <Label htmlFor="child2Age">Age</Label>
+                                            <Input type="select" id="child2Age" name="child2Age" value={this.state.child2Age} onChange={this.handleInputChange}>
+                                                <option disabled></option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </Input>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row form>
+                                    <Col xs={9}>
+                                        <FormGroup>
+                                            <Label htmlFor="child3Name">(3) Child's Full Name (optional)</Label>
+                                            <Input type="text" id="child3Name" name="child3Name" placeholder="Child's Name" value={this.state.child3Name} onChange={this.handleInputChange} />
+                                        </FormGroup>
+                                    </Col>
+                                    <Col xs={3}>
+                                        <FormGroup>
+                                            <Label htmlFor="child3Age">Age</Label>
+                                            <Input type="select" id="child3Age" name="child3Age" value={this.state.child3Age} onChange={this.handleInputChange}>
+                                                <option disabled></option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </Input>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input required type="checkbox" id="careAndUsePolicy" name="careAndUsePolicy" value={this.state.careAndUsePolicy} onChange={this.handleInputChange} />{' '}
+                                                I agree to check out age-appropriate toys for my child(ren) and supervise their play. I agree to take care of the toys and clean them with soap and water or a bleach wipe before returning them to TLL.
+                                            </Label>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input required type="checkbox" id="checkoutPolicy" name="checkoutPolicy" value={this.state.checkoutPolicy} onChange={this.handleInputChange} />{' '}
+                                                I agree that toys may be checked out for two weeks at a time with the possibility of one renewal, if there is not a hold already placed on the toy.
+                                            </Label>
                                         </FormGroup>
                                     </Col>
                                 </Row>
@@ -336,9 +439,7 @@ export default SignUp;
 /* 
 
 Create a sign-up form including the following:
-first names and ages of children
-checkbox to agree with policy about toy use, care, and cleaning 
-checkbox to agree with policy about length of checkout and possible renewal of items
+how do I make the checkboxes uncheck when the form is reset?
 radio buttons with plan selection (3-month or 1-year)
 
 */
