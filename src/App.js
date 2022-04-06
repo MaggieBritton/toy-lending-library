@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { INVENTORY } from './data/inventory';
 import Toys from './components/Toys';
+import ToyInfo from './components/ToyInfo';
 import Contact from './components/Contact';
 import About from './components/About';
 import SignUp from './components/SignUp';
@@ -22,6 +23,15 @@ class App extends Component {
   }
   
   render() {
+
+    const ToyWithId = ({match}) => {
+      return (
+        <ToyInfo 
+          toy={this.props.inventory.filter(toy => toy.id === +match.params.toyId[0])}
+        />
+      )
+    }
+
     return (
       <BrowserRouter>
         <ScrollToTop>
@@ -38,6 +48,7 @@ class App extends Component {
                   inventoryItems={this.state.inventory} 
                 /> }  
               />
+              <Route path='/toys/:toyId' component={ToyWithId} />
               <Route exact path='/about' component={About} />
               <Route exact path='/signup' component={SignUp} />
               <Route exact path='/contact' component={Contact} />  
