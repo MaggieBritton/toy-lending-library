@@ -189,6 +189,11 @@ h4.filter-heading {
   font-size: 1.25em;
 }
 
+/* ToysInfoPage Styles */
+.toyInfo-img {
+  width: 100%;
+}
+
 /* AboutPage Styles */
 .about-bg {
   background-color: #71a3ee;

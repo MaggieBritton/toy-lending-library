@@ -27,7 +27,7 @@ class App extends Component {
     const ToyWithId = ({match}) => {
       return (
         <ToyInfo 
-          toy={this.props.inventory.filter(toy => toy.id === +match.params.toyId[0])}
+          toy={this.state.inventory.filter(toy => toy.id === +match.params.toyId)[0]}
         />
       )
     }

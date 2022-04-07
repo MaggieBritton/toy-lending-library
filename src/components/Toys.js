@@ -3,6 +3,7 @@ import InventoryCard from './InventoryCard';
 import { Button } from 'reactstrap';
 
 const Toys = (props)=> {
+    
     return(
         <React.Fragment>
             <div className="container-fluid">
@@ -61,8 +62,6 @@ export default Toys;
 
 To Do:
 Add filters to Toy Inventory Page
-Code individual toy pages
-Code About Us, Sign Up, Contact pages
 Add animation to cards when hovered on (slight wiggle or scale?)
 
 */
