@@ -14,9 +14,7 @@ const Toys = ({ inventoryItems })=> {
     }
     //filterAge function still isn't accessing age data because it's nested in its own array
     const filterAge = (age) => {
-        const filteredAgeResult = inventoryItems.filter(currentItem => {
-            return currentItem.age === age;
-        });
+        const filteredAgeResult = inventoryItems.filter(currentItem => currentItem.age.includes(age));
         setItems(filteredAgeResult);
     }
 
