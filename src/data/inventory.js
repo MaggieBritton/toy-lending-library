@@ -7,7 +7,7 @@ export const INVENTORY = [
         image: "/assets/inventoryImages/airplanes.jpg",
         description: "These three wooden airplaines in red, blue, and cream will inspire your child's imagination. A perfect addition to small-world play.",
         featured: false,
-        checkedOut: false 
+        checkedOut: true 
     },
     {
         id: 1,
@@ -67,7 +67,7 @@ export const INVENTORY = [
         image: "/assets/inventoryImages/ikeaKitchen.jpg",
         description: "The kitchen set includes cookware, tableware, utensils, and play food. Perfect to pair with the chef's costume.",
         featured: false,
-        checkedOut: false
+        checkedOut: true
     },
     {
         id: 7,

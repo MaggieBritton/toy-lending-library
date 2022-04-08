@@ -192,6 +192,7 @@ h4.filter-heading {
 /* ToysInfoPage Styles */
 .toyInfo-img {
   width: 100%;
+  border-radius: 20px;
 }
 
 /* AboutPage Styles */
