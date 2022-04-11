@@ -12,7 +12,7 @@ const FeaturedToys = ({inventoryItems})=> {
     function handleClick(path) {
         history.push(path);
     }
-    
+
     return(
         <div className="container-fluid featuredToys-bg">
             <div className="row">
@@ -34,7 +34,7 @@ const FeaturedToys = ({inventoryItems})=> {
                     <Button className="button my-4" onClick={()=> handleClick("/toys")}>More Toys</Button>
                 </div>
             </div>
-        </div>    
+        </div>
     );
 };
 

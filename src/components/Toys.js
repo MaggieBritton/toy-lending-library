@@ -3,43 +3,44 @@ import InventoryCard from './InventoryCard';
 import { Button } from 'reactstrap';
 
 const Toys = ({ inventoryItems })=> {
+    const [filterAge, setFilterAge] = useState(null)
+    const [filterStatus, setFilterStatus] = useState(false)
+    const [filterCategory, setFilterCategory] = useState(null)
 
-    const [filterAge, setFilterAge] = useState(null);
-    const [filterStatus, setFilterStatus] = useState('');
-    const [filterCategory, setFilterCategory] = useState(null);
-    
     const resetFilter = () => {
-        setFilterAge(null);
-        setFilterStatus('');
-        setFilterCategory(null);
-    }    
+        setFilterAge(null)
+        setFilterStatus(false)
+        setFilterCategory(null)
+    }
+
 
     return(
-        <React.Fragment>
-            <div className="container-fluid">
-                <div className="row toyInventory-bg">
-                    <div className="col my-auto">
-                        <h2 className="text-center">Toy Inventory</h2>
-                    </div>
-                    <div className="col  pr-0">
-                        <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Truck"/>
-                    </div>
-                </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-md-4 col-lg-3 mt-4">
-                        <div className="filter-heading-div">
-                            <h3 className="filter-heading">Filters</h3>
-                            <Button outline color="danger" className="btn-sm filter-btn" onClick={()=>resetFilter()}>clear all</Button>   
-                        </div>
-                        
-                        <h4 className="filter-heading">Category</h4>
-                        <button
-                            className={`filter-btn btn ${filterCategory === "building" ? "btn-warning" : "btn-outline-secondary"}`} onClick={() => setFilterCategory('building')}>
-                            building
-                        </button>
-                        <button
+      <React.Fragment>
+          <div className="container-fluid">
+              <div className="row toyInventory-bg">
+                  <div className="col my-auto">
+                      <h2 className="text-center">Toy Inventory</h2>
+                  </div>
+                  <div className="col  pr-0">
+                      <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Truck"/>
+                  </div>
+              </div>
+          </div>
+          <div className="container">
+              <div className="row">
+                  <div className="col-12 col-md-4 col-lg-3 mt-4">
+                      <div className="filter-heading-div">
+                          <h3 className="filter-heading">Filters</h3>
+                          <Button outline color="danger" className="btn-sm filter-btn" onClick={()=>resetFilter()}>clear all</Button>
+                      </div>
+
+                      <h4 className="filter-heading">Category</h4>
+                      <button
+                        className={`filter-btn btn ${filterCategory === "building" ? "btn-warning" : "btn-outline-secondary"}`}
+                        onClick={() => setFilterCategory('building')}>
+                          building
+                      </button>
+                      <button
                         className={`filter-btn btn ${filterCategory === "dolls" ? "btn-warning" : "btn-outline-secondary"}`}
                         onClick={() => setFilterCategory('dolls')}>
                           dolls
@@ -123,10 +124,9 @@ const Toys = ({ inventoryItems })=> {
     )
 };
 
-
 export default Toys;
 
-/* 
+/*
 
 To Do:
 Add filters to Toy Inventory Page

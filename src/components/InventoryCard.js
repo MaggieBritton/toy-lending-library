@@ -9,7 +9,7 @@ const InventoryCard = ({item}) => {
     function handleClick(path) {
         history.push(path);
     }
-    
+
     return (
         <div key={item.id} className="col-xs-12 col-sm-6 col-lg-3"> 
             <Card className="inventoryItem-card mb-3" >
