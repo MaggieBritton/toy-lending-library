@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import InventoryCard from './InventoryCard';
-import { Button } from 'reactstrap';
 
-const Toys = ({ inventoryItems })=> {
-    const [filterAge, setFilterAge] = useState(null)
-    const [filterStatus, setFilterStatus] = useState(false)
-    const [filterCategory, setFilterCategory] = useState(null)
+const Toys = ({ inventoryItems })=> { 
+    const [filterAge, setFilterAge] = useState(null);
+    const [filterStatus, setFilterStatus] = useState(null);
+    const [filterCategory, setFilterCategory] = useState(null);
 
     const resetFilter = () => {
-        setFilterAge(null)
-        setFilterStatus(false)
-        setFilterCategory(null)
+      setFilterAge(null);
+      setFilterStatus(null);
+      setFilterCategory(null);
     }
 
+    const resetAge = () => {
+      setFilterAge(null);
+    }
+
+    const resetStatus = () => {
+      setFilterStatus(null);
+    }
+
+    const resetCategory = () => {
+      setFilterCategory(null);
+    }
 
     return(
       <React.Fragment>
@@ -31,10 +41,13 @@ const Toys = ({ inventoryItems })=> {
                   <div className="col-12 col-md-4 col-lg-3 mt-4">
                       <div className="filter-heading-div">
                           <h3 className="filter-heading">Filters</h3>
-                          <Button outline color="danger" className="btn-sm filter-btn" onClick={()=>resetFilter()}>clear all</Button>
+                          <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetFilter()}>clear all</button>
                       </div>
 
-                      <h4 className="filter-heading">Category</h4>
+                      <div className="filter-subheading-div">
+                        <h4 className="filter-heading">Category</h4>
+                        <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetCategory()}>clear</button>
+                      </div>
                       <button
                         className={`filter-btn btn ${filterCategory === "building" ? "btn-warning" : "btn-outline-secondary"}`}
                         onClick={() => setFilterCategory('building')}>
@@ -71,7 +84,10 @@ const Toys = ({ inventoryItems })=> {
                           vehicles
                       </button>
 
-                      <h4 className="filter-heading">Age</h4>
+                      <div className="filter-subheading-div">
+                        <h4 className="filter-heading">Age</h4>
+                        <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetAge()}>clear</button>
+                      </div>
                       <button
                         className={`filter-btn btn ${filterAge === "0-3" ? "btn-warning" : "btn-outline-secondary"}`}
                         onClick={() => setFilterAge('0-3')}>
@@ -93,7 +109,10 @@ const Toys = ({ inventoryItems })=> {
                           9-12
                       </button>
 
-                      <h4 className="filter-heading">Status</h4>
+                      <div className="filter-subheading-div">
+                        <h4 className="filter-heading">Status</h4>
+                        <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetStatus()}>clear</button>
+                      </div>
                       <button
                         className={`filter-btn btn ${filterStatus === false ? "btn-warning" : "btn-outline-secondary"}`}
                         onClick={() => setFilterStatus(false)}>
@@ -108,7 +127,7 @@ const Toys = ({ inventoryItems })=> {
                     <div className="col">
                         <div className="row mt-4">
                             {inventoryItems.map((item, index) => {
-                                if (filterStatus !== item.checkedOut) return null;
+                                if (filterStatus !== null && filterStatus !== item.checkedOut) return null;
                                 if (filterCategory !== null && filterCategory !== item.category) return null;
                                 if (filterAge !== null && !item.age.includes(filterAge)) return null;
 
