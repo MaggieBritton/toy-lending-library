@@ -132,7 +132,8 @@ const Toys = ({ inventoryItems })=> {
                                 if (filterAge !== null && !item.age.includes(filterAge)) return null;
 
                                 return (
-                                    <InventoryCard key={index} item={item}/>
+                                    <InventoryCard 
+                                      key={index} item={item}/>
                                 )
                             })}
                         </div>
