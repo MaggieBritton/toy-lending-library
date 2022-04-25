@@ -14,7 +14,7 @@ const InventoryCard = ({item}) => {
     return (
         <motion.div 
             whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+            transition={{ easeInOut: 0.5 }}
             key={item.id} 
             className="col-xs-12 col-sm-6 col-lg-3"
         > 

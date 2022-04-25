@@ -96,6 +96,10 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
+.whatIs-text:last-of-type {
+  margin-bottom: 5%;
+}
+
 @media (min-width: 768px) {
   .hero {
     position: relative;
