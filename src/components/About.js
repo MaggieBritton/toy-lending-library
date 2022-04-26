@@ -38,7 +38,7 @@ class About extends Component {
                         <div className="col">
                             <h2>About Us</h2>
 
-                            <p>TLL was founded in 1996 by a small group of parents and daycare providers who were all united by a common goal: to provide developmentally appropriate and engaging toys and games to children in the Big City area without having to purchase and store every toy at their homes or daycares. TLL began with a modest inventory of a few dozen toys, and has grown exponentially since then. Over two decades later, TLL is a cornerstone within the Big City parenting community, regularly serving hundreds of families and children. TLL has changed locations several times since 1996, with its current location on Playthings Boulevard being the largest space. We look forward to serving the Big City community for generations to come.</p>    
+                            <p>On the most basic level, TLL exists to advocate for more and varied play during childhood. Children's needs and wants change quickly as they grow, and TLL can help to meet those needs by providing toys and games that are appropriate for a child in that moment without straining the family budget or cluttering the home with toys that are quickly outgrown. We at TLL are passionate about play and learning and working in community to better the lives of children in Big City.</p>    
                         </div>
                     </div>
                     <div className="about-tab-container mb-4">
@@ -79,7 +79,9 @@ class About extends Component {
                                                 <img className="about-img mb-4"src="assets/siteImages/biking.jpg" alt="Child Biking" />
                                             </Col>
                                             <Col>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                                <p>Toy Lending Library strives to provide quality toys and games to the children of Big City and promotes the importance of play in childhood.</p>
+
+                                                <p>We are committed to sustainability, affordability, and equity and inclusion within our community.</p>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -95,7 +97,7 @@ class About extends Component {
                                                 <img className="about-img mb-4" src="assets/siteImages/playingInBallPit.jpg" alt="Child Playing in a Ball Pit" />
                                             </Col>
                                             <Col>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                                <p>TLL was founded in 1996 by a small group of parents and daycare providers who were all united by a common goal: to provide developmentally appropriate and engaging toys and games to children in the Big City area without having to purchase and store every toy at their homes or daycares. TLL began with a modest inventory of a few dozen toys, and has grown exponentially since then. Over two decades later, TLL is a cornerstone within the Big City parenting community, regularly serving hundreds of families and children. TLL has changed locations several times since 1996, with its current location on Playthings Boulevard being the largest space. We look forward to serving the Big City community for generations to come.</p>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -109,7 +111,7 @@ class About extends Component {
                                                 <img className="about-img mb-4" src="assets/siteImages/playingUkulele.jpg" alt="Child Playing Ukulele" />
                                             </Col>
                                             <Col>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a iaculis at erat. Vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Pretium lectus quam id leo in vitae turpis massa sed. Gravida neque convallis a cras semper auctor neque vitae. Pellentesque id nibh tortor id aliquet lectus proin nibh. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. </p>
+                                                <p>Since its opening in 1996, TLL has relied on a committed and generous group of volunteers to provide its services to the Big City community. With no paid employees, our volunteers are abolutely essential to TLL's operation. Our volunteers staff TLL during its hours of operation, check toys in and out, process new member forms and payments, clean and reshelve toys,  contribute to our monthly newsletter, and more.</p>
                                             </Col>
                                         </Row>
                             </TabPane>
@@ -123,8 +125,3 @@ class About extends Component {
 };
 
 export default About;
-
-/* Add:
-tabs with info about the TLL (include photo in each tab view)
-
-*/
