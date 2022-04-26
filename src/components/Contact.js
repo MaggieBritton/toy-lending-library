@@ -126,6 +126,12 @@ class Contact extends Component {
                                     <a className="contact-link" href="tel:+15635556789">Phone: (563) 555-6789</a><br />
                                     <a className="contact-link"  href="mailto:toylendinglibrary@email.com">Email: toylendinglibrary@email.com</a>
                             </address>
+                            <strong>Hours of Operation:</strong>
+                            <ul className="contact-hours">
+                                <li>Tues. 3:30&ndash;6:00 pm</li>
+                                <li>Wed. 3:30&ndash;6:00 pm</li>
+                                <li>Sat. 10:00 am&ndash;2:00 pm</li>
+                            </ul>
                         </div>
                         <div className="col col-md-8">
                             <div className="map-responsive">    
