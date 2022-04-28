@@ -1,109 +1,96 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Col, Button, FormFeedback } from 'reactstrap';
+import { Row, Button } from 'reactstrap';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const ContactForm = () => {
+    
+    const phoneReg = /^\d+$/;
+    
+    return (
+        <Formik
+            initialValues={{
+              firstName: '',
+                lastName: '',
+                phoneNum: '',
+                email: '',
+                contactType: 'By Email',
+                message: ''  
+            }}
+            validationSchema={Yup.object({
+                firstName: Yup.string()
+                    .min(2, 'Must be at least 2 characters')
+                    .max(15, 'Must be 15 or fewer characters')
+                    .required('Required'),
+                lastName: Yup.string()
+                    .min(2, 'Must be at least 2 characters')
+                    .max(15, 'Must be 20 or fewer characters')
+                    .required('Required'),
+                phoneNum: Yup.string()
+                    .min(10, 'Please include 3-digit area code') 
+                    .max(10, 'Please include 3-digit area code')   
+                    .matches(phoneReg, 'Invalid Phone Number')
+                    .required('Required'),
+                email: Yup.string()
+                    .email('Invalid email address')
+                    .required('Required') 
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                }, 400);
+            }}
+        >
+            <Form>
+                <Row>
+                    <label htmlfor="firstName" className="col-md-2">First Name</label>
+                    <Field name="firstName" type="text" className="col-md-6 col-lg-8" />  
+                    <ErrorMessage name="firstName" />      
+                </Row>
+                
+                <Row>
+                    <label htmlfor="lastName" className="col-md-2">Last Name</label>
+                    <Field name="lastName" type="text" className="col-md-6 col-lg-8" />
+                    <ErrorMessage name="lastName" />
+                </Row>
+                
+                <Row>
+                    <label htmlfor="phoneNum" className="col-md-2">Phone Number</label>
+                    <Field name="phoneNum" type="text" className="col-md-6 col-lg-8" />
+                    <ErrorMessage name="phoneNum" />
+                </Row>
+                
+                <Row>
+                    <label htmlfor="email" className="col-md-2">Email</label>
+                    <Field name="email" type="email" className="col-md-6 col-lg-8" />
+                    <ErrorMessage name="email" />
+                </Row>
+                
+                <Row>
+                    <label htmlFor="contactType" className="col-md-2">Contact Preference</label>
+                    <Field as="select" name="contactType" className="col-md-6 col-lg-8">
+                        <option value="By Email">By Email</option>
+                        <option value="By Phone">By Phone</option>
+                    </Field>
+                </Row>
+                
+                <Row>
+                    <label htmlFor="message" className="col-md-2">Message</label>
+                    <Field as="textarea" name="message" rows="10" className="col-md-6 col-lg-8" />
+                </Row>
+                
+
+                <Button type="submit">Submit</Button>
+
+            </Form>
+        </Formik>
+    );
+}
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            contactType: 'By Email',
-            message: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const name = target.name;
-        const value = target.value;
-
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleSubmit(event) {
-        //below console.log and alert simply verify that the form is working
-        console.log('Current state is: ' + JSON.stringify(this.state));
-        alert('Current state is: ' + JSON.stringify(this.state));
-        event.preventDefault();
-        //below setState clears form inputs after submit
-        this.setState({
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            contactType: 'By Email',
-            message: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
-        });
-    }
-
-    validate(firstName, lastName, phoneNum, email) {
-
-        const errors = {
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: ''
-        };
-
-        if (this.state.touched.firstName) {
-            if (firstName.length < 2) {
-                errors.firstName = 'First name must be at least 2 characters.';
-            } else if (firstName.length > 15) {
-                errors.firstName = 'First name must be 15 characters or fewer.';
-            }
-        }
-
-        if (this.state.touched.lastName) {
-            if (lastName.length < 2) {
-                errors.lastName = 'Last name must be at least 2 characters.';
-            } else if (lastName.length > 15) {
-                errors.lastName = 'Last name must be 15 characters or fewer.';
-            }
-        }
-
-        const reg = /^\d+$/;
-        if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
-            errors.phoneNum = 'The phone number should contain only numbers.';
-        }
-
-        const emailReg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
-        if (this.state.touched.email && !emailReg.test(email)) {
-            errors.email = 'Invalid email.';
-        }
-
-        return errors;
-    }
-
-    handleBlur = (field) => () => {
-        this.setState({
-            touched: {...this.state.touched, [field]: true}
-        });
-    }
-
-    render() {
-        
-        const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phoneNum, this.state.email);
-        
+    render() {  
         return(
             <React.Fragment>
                 <div className="container-fluid">
@@ -147,78 +134,7 @@ class Contact extends Component {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <Form onSubmit={this.handleSubmit}>
-                                <FormGroup row>
-                                    <Label htmlFor="firstName" md={2}>First Name</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="firstName" name="firstName" placeholder="First Name"
-                                        value={this.state.firstName}
-                                        invalid={errors.firstName}
-                                        onBlur={this.handleBlur("firstName")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.firstName}</FormFeedback>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="text" id="lastName" name="lastName" placeholder="Last Name"
-                                        value={this.state.lastName}
-                                        invalid={errors.lastName}
-                                        onBlur={this.handleBlur("lastName")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.lastName}</FormFeedback>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="phoneNum" md={2}>Phone Number</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input required type="tel" id="phoneNum" name="phoneNum" placeholder="Phone Number"
-                                        value={this.state.phoneNum}
-                                        invalid={errors.phoneNum}
-                                        onBlur={this.handleBlur("phoneNum")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.phoneNum}</FormFeedback>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="email" md={2}>Email</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input type="email" id="email" name="email" placeholder="Email"
-                                        value={this.state.email}
-                                        invalid={errors.email}
-                                        onBlur={this.handleBlur("email")}
-                                        onChange={this.handleInputChange} />
-                                        <FormFeedback>{errors.email}</FormFeedback>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="contactType" md={2}>Contact Preference</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input type="select" id="contactType" name="contactType"
-                                                value={this.state.contactType}
-                                                onChange={this.handleInputChange}>
-                                            <option>By Email</option>
-                                            <option>By Phone</option>
-                                        </Input>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="message" md={2}>Message</Label>
-                                    <Col md={10} lg={8}>
-                                        <Input type="textarea" id="message" name="message" rows="10"
-                                        value={this.state.message}
-                                        onChange={this.handleInputChange}></Input>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md={{size: 10, offset: 2}}>
-                                        <Button type="submit" color="warning">
-                                            Submit
-                                        </Button>
-                                    </Col>
-                                </FormGroup>
-                            </Form>
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
