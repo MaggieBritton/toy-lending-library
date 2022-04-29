@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Button } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const ContactForm = () => {
     
-    const phoneReg = /^\d{10}/;
+    const phoneReg = /\d{10}/;
     
     return (
         <Formik
@@ -27,7 +27,7 @@ const ContactForm = () => {
                     .max(15, 'Must be 20 or fewer characters.')
                     .required('Required'),
                 phoneNum: Yup.string() 
-                    .matches(phoneReg, 'Invalid Phone Number. The phone number should contain only numbers.')
+                    .matches(phoneReg, 'Invalid Phone Number. Should contain only numbers.')
                     .required('Required'),
                 email: Yup.string()
                     .email('Invalid email address.')
@@ -92,65 +92,62 @@ const ContactForm = () => {
     );
 }
 
-class Contact extends Component {
-
-    render() {  
-        return(
-            <React.Fragment>
-                <div className="container-fluid">
-                    <div className="row contact-bg">
-                        <div className="col my-auto">
-                            <h1 className="text-center">Contact</h1>
-                        </div>
-                        <div className="col pr-0">
-                            <img className="contact-img" src="assets/siteImages/confusedBunnySquare.jpg" alt="Confused Bunny"/>
-                        </div>
+const Contact = () => {  
+    return(
+        <React.Fragment>
+            <div className="container-fluid">
+                <div className="row contact-bg">
+                    <div className="col my-auto">
+                        <h1 className="text-center">Contact</h1>
+                    </div>
+                    <div className="col pr-0">
+                        <img className="contact-img" src="assets/siteImages/confusedBunnySquare.jpg" alt="Confused Bunny"/>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="row mt-4 mb-4">
-                        <div className="col-12 col-md-4 mb-3">
-                            <div className="row">
-                                <div className="col col-md-12">
-                                <address>
-                                    <strong>Toy Lending Library</strong> <br />
-                                    123 Playthings Boulevard <br />
-                                    Big City, USA <br />
-                                    <a className="contact-link" href="tel:+15635556789">Phone: (563) 555-6789</a><br />
-                                    <a className="contact-link"  href="mailto:info@toylendinglibrary.com">Email: info@toylendinglibrary.com</a>
-                            </address>
-                                </div>
-                                <div className="col col-md-12">
-                                    <strong>Hours of Operation:</strong>
-                                    <ul className="contact-hours">
-                                        <li>Tues. 3:30&ndash;6:00 pm</li>
-                                        <li>Wed. 3:30&ndash;6:00 pm</li>
-                                        <li>Sat. 10:00 am&ndash;2:00 pm</li>
-                                    </ul>
-                                </div>
-                            </div> 
-                        </div>
-                        <div className="col col-md-8">
-                            <div className="map-responsive">    
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.726934036243!2d-91.40376728460414!3d40.41489967936527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87e73a524c7371e9%3A0x68b6789884604064!2s123%20Boulevard%20Rd%2C%20Keokuk%2C%20IA%2052632!5e0!3m2!1sen!2sus!4v1648492940586!5m2!1sen!2sus" title="Toy Lending Library location map" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            </div> 
-                        </div>
+            </div>
+            <div className="container">
+                <div className="row mt-4 mb-4">
+                    <div className="col-12 col-md-4 mb-3">
+                        <div className="row">
+                            <div className="col col-md-12">
+                            <address>
+                                <strong>Toy Lending Library</strong> <br />
+                                123 Playthings Boulevard <br />
+                                Big City, USA <br />
+                                <a className="contact-link" href="tel:+15635556789">Phone: (563) 555-6789</a><br />
+                                <a className="contact-link"  href="mailto:info@toylendinglibrary.com">Email: info@toylendinglibrary.com</a>
+                        </address>
+                            </div>
+                            <div className="col col-md-12">
+                                <strong>Hours of Operation:</strong>
+                                <ul className="contact-hours">
+                                    <li>Tues. 3:30&ndash;6:00 pm</li>
+                                    <li>Wed. 3:30&ndash;6:00 pm</li>
+                                    <li>Sat. 10:00 am&ndash;2:00 pm</li>
+                                </ul>
+                            </div>
+                        </div> 
                     </div>
-                    <div className="row mt-4">
-                        <div className="col-xs-12 col-lg-8">
-                            <h2>Contact Us</h2>
-                            <p>Please let us know if you have any questions! We will get back to you via email or phone as soon as we can.</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-12 col-lg-8">
-                            <ContactForm />
-                        </div>
+                    <div className="col col-md-8">
+                        <div className="map-responsive">    
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.726934036243!2d-91.40376728460414!3d40.41489967936527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87e73a524c7371e9%3A0x68b6789884604064!2s123%20Boulevard%20Rd%2C%20Keokuk%2C%20IA%2052632!5e0!3m2!1sen!2sus!4v1648492940586!5m2!1sen!2sus" title="Toy Lending Library location map" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        </div> 
                     </div>
                 </div>
-            </React.Fragment>
-        );
-    }
+                <div className="row mt-4">
+                    <div className="col-xs-12 col-lg-8">
+                        <h2>Contact Us</h2>
+                        <p>Please let us know if you have any questions! We will get back to you via email or phone as soon as we can.</p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12 col-lg-8">
+                        <ContactForm />
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>
+    );
 }
 
 export default Contact;
