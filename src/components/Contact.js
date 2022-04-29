@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 
 const ContactForm = () => {
     
-    const phoneReg = /^\d+$/;
+    const phoneReg = /^\d{10}/;
     
     return (
         <Formik
@@ -19,20 +19,18 @@ const ContactForm = () => {
             }}
             validationSchema={Yup.object({
                 firstName: Yup.string()
-                    .min(2, 'Must be at least 2 characters')
-                    .max(15, 'Must be 15 or fewer characters')
+                    .min(2, 'Must be at least 2 characters.')
+                    .max(15, 'Must be 15 or fewer characters.')
                     .required('Required'),
                 lastName: Yup.string()
-                    .min(2, 'Must be at least 2 characters')
-                    .max(15, 'Must be 20 or fewer characters')
+                    .min(2, 'Must be at least 2 characters.')
+                    .max(15, 'Must be 20 or fewer characters.')
                     .required('Required'),
-                phoneNum: Yup.string()
-                    .min(10, 'Please include 3-digit area code') 
-                    .max(10, 'Please include 3-digit area code')   
-                    .matches(phoneReg, 'Invalid Phone Number')
+                phoneNum: Yup.string() 
+                    .matches(phoneReg, 'Invalid Phone Number. May only include 10 digits, including the area code.')
                     .required('Required'),
                 email: Yup.string()
-                    .email('Invalid email address')
+                    .email('Invalid email address.')
                     .required('Required') 
             })}
             onSubmit={(values, { setSubmitting }) => {
@@ -43,45 +41,45 @@ const ContactForm = () => {
             }}
         >
             <Form>
-                <Row>
-                    <label htmlfor="firstName" className="col-md-2">First Name</label>
-                    <Field name="firstName" type="text" className="col-md-6 col-lg-8" />  
-                    <ErrorMessage name="firstName" />      
+                <Row form>
+                    <label htmlfor="firstName" className="contact-label col-md-2">First Name</label>
+                    <Field name="firstName" type="text" placeholder="First Name" className="contact-field col-md-6 col-lg-8" />  
+                    <ErrorMessage name="firstName" className="contact-error" />      
                 </Row>
                 
-                <Row>
-                    <label htmlfor="lastName" className="col-md-2">Last Name</label>
-                    <Field name="lastName" type="text" className="col-md-6 col-lg-8" />
-                    <ErrorMessage name="lastName" />
+                <Row form>
+                    <label htmlfor="lastName" className="contact-label col-md-2">Last Name</label>
+                    <Field name="lastName" type="text" placeholder="Last Name"  className="contact-field col-md-6 col-lg-8" />
+                    <ErrorMessage name="lastName" className="contact-error" />
                 </Row>
                 
-                <Row>
-                    <label htmlfor="phoneNum" className="col-md-2">Phone Number</label>
-                    <Field name="phoneNum" type="text" className="col-md-6 col-lg-8" />
-                    <ErrorMessage name="phoneNum" />
+                <Row form>
+                    <label htmlfor="phoneNum" className="contact-label col-md-2">Phone Number</label>
+                    <Field name="phoneNum" type="text" placeholder="2345556789" className="contact-field col-md-6 col-lg-8" />
+                    <ErrorMessage name="phoneNum" className="contact-error" />
                 </Row>
                 
-                <Row>
-                    <label htmlfor="email" className="col-md-2">Email</label>
-                    <Field name="email" type="email" className="col-md-6 col-lg-8" />
-                    <ErrorMessage name="email" />
+                <Row form>
+                    <label htmlfor="email" className="contact-label col-md-2">Email</label>
+                    <Field name="email" type="email" placeholder="name@email.com" className="contact-field col-md-6 col-lg-8" />
+                    <ErrorMessage name="email" className="contact-error" />
                 </Row>
                 
-                <Row>
-                    <label htmlFor="contactType" className="col-md-2">Contact Preference</label>
-                    <Field as="select" name="contactType" className="col-md-6 col-lg-8">
+                <Row form>
+                    <label htmlFor="contactType" className="contact-label col-md-2">Contact Preference</label>
+                    <Field as="select" name="contactType" className="contact-field col-md-6 col-lg-8">
                         <option value="By Email">By Email</option>
                         <option value="By Phone">By Phone</option>
                     </Field>
                 </Row>
                 
-                <Row>
-                    <label htmlFor="message" className="col-md-2">Message</label>
-                    <Field as="textarea" name="message" rows="10" className="col-md-6 col-lg-8" />
+                <Row form>
+                    <label htmlFor="message" className="contact-label col-md-2">Message</label>
+                    <Field as="textarea" name="message" rows="10" className="contact-field col-md-6 col-lg-8" />
                 </Row>
                 
 
-                <Button type="submit">Submit</Button>
+                <Button className="contact-button btn btn-warning" type="submit">Submit</Button>
 
             </Form>
         </Formik>
