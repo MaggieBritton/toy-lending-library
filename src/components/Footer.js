@@ -9,18 +9,12 @@ const Footer = () => {
                 <div className="row pt-4">
                     <div className="col-6 col-md-4 text-center my-auto">
                         <address>
-                                Toy Lending Library <br />
+                                <strong>Toy Lending Library</strong> <br />
                                 123 Playthings Boulevard <br />
                                 Big City, USA <br />
                                 <a className="footer-link" href="tel:+15635556789">Phone: (563) 555-6789</a><br />
-                                <a className="footer-link" href="mailto:toylendinglibrary@email.com">Email: toylendinglibrary@email.com</a>
+                                <a className="footer-link" href="mailto:info@toylendinglibrary.com">Email: info@toylendinglibrary.com</a>
                         </address>
-                        <p>Hours of Operation:</p>
-                        <ul className="footer-hours">
-                            <li>Tues. 3:30&ndash;6:00 pm</li>
-                            <li>Wed. 3:30&ndash;6:00 pm</li>
-                            <li>Sat. 10:00 am&ndash;2:00 pm</li>
-                        </ul>
                     </div>
                     <div className="col-6 col-md-4 text-center my-auto">
                         <ul className="footer-link-list">

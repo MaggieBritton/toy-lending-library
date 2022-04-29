@@ -27,55 +27,61 @@ const ContactForm = () => {
                     .max(15, 'Must be 20 or fewer characters.')
                     .required('Required'),
                 phoneNum: Yup.string() 
-                    .matches(phoneReg, 'Invalid Phone Number. May only include 10 digits, including the area code.')
+                    .matches(phoneReg, 'Invalid Phone Number. The phone number should contain only numbers.')
                     .required('Required'),
                 email: Yup.string()
                     .email('Invalid email address.')
                     .required('Required') 
             })}
-            onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
+            onSubmit={(values, { resetForm }) => {
+                console.log(values);
+                resetForm({ values: '' });
             }}
         >
             <Form>
-                <Row form>
-                    <label htmlfor="firstName" className="contact-label col-md-2">First Name</label>
-                    <Field name="firstName" type="text" placeholder="First Name" className="contact-field col-md-6 col-lg-8" />  
-                    <ErrorMessage name="firstName" className="contact-error" />      
+                <Row form className="contact-form-row">
+                    <label htmlFor="firstName" className="contact-label col-12">First Name</label>
+                    <Field name="firstName" type="text" placeholder="First Name" className="contact-field col-12" />  
+                    <ErrorMessage name="firstName" >
+                        {msg => <div className="contact-error">{msg}</div>}
+                    </ErrorMessage>      
                 </Row>
                 
-                <Row form>
-                    <label htmlfor="lastName" className="contact-label col-md-2">Last Name</label>
-                    <Field name="lastName" type="text" placeholder="Last Name"  className="contact-field col-md-6 col-lg-8" />
-                    <ErrorMessage name="lastName" className="contact-error" />
+                <Row form className="contact-form-row">
+                    <label htmlFor="lastName" className="contact-label col-12">Last Name</label>
+                    <Field name="lastName" type="text" placeholder="Last Name"  className="contact-field col-12" />
+                    <ErrorMessage name="lastName" >
+                        {msg => <div className="contact-error">{msg}</div>}
+                    </ErrorMessage> 
                 </Row>
                 
-                <Row form>
-                    <label htmlfor="phoneNum" className="contact-label col-md-2">Phone Number</label>
-                    <Field name="phoneNum" type="text" placeholder="2345556789" className="contact-field col-md-6 col-lg-8" />
-                    <ErrorMessage name="phoneNum" className="contact-error" />
+                <Row form className="contact-form-row">
+                    <label htmlFor="phoneNum" className="contact-label col-12">Phone Number</label>
+                    <Field name="phoneNum" type="text" placeholder="2345556789" className="contact-field col-12" />
+                    <ErrorMessage name="phoneNum" >
+                        {msg => <div className="contact-error">{msg}</div>}
+                    </ErrorMessage> 
                 </Row>
                 
-                <Row form>
-                    <label htmlfor="email" className="contact-label col-md-2">Email</label>
-                    <Field name="email" type="email" placeholder="name@email.com" className="contact-field col-md-6 col-lg-8" />
-                    <ErrorMessage name="email" className="contact-error" />
+                <Row form className="contact-form-row">
+                    <label htmlFor="email" className="contact-label col-12">Email</label>
+                    <Field name="email" type="email" placeholder="name@email.com" className="contact-field col-12" />
+                    <ErrorMessage name="email" >
+                        {msg => <div className="contact-error">{msg}</div>}
+                    </ErrorMessage> 
                 </Row>
                 
-                <Row form>
-                    <label htmlFor="contactType" className="contact-label col-md-2">Contact Preference</label>
-                    <Field as="select" name="contactType" className="contact-field col-md-6 col-lg-8">
+                <Row form className="contact-form-row">
+                    <label htmlFor="contactType" className="contact-label col-12">Contact Preference</label>
+                    <Field as="select" name="contactType" className="contact-field col-12">
                         <option value="By Email">By Email</option>
                         <option value="By Phone">By Phone</option>
                     </Field>
                 </Row>
                 
-                <Row form>
-                    <label htmlFor="message" className="contact-label col-md-2">Message</label>
-                    <Field as="textarea" name="message" rows="10" className="contact-field col-md-6 col-lg-8" />
+                <Row form className="contact-form-row">
+                    <label htmlFor="message" className="contact-label col-12">Message</label>
+                    <Field as="textarea" name="message" rows="10" className="contact-field col-12" />
                 </Row>
                 
 
@@ -104,19 +110,25 @@ class Contact extends Component {
                 <div className="container">
                     <div className="row mt-4 mb-4">
                         <div className="col-12 col-md-4 mb-3">
-                            <address>
+                            <div className="row">
+                                <div className="col col-md-12">
+                                <address>
                                     <strong>Toy Lending Library</strong> <br />
                                     123 Playthings Boulevard <br />
                                     Big City, USA <br />
                                     <a className="contact-link" href="tel:+15635556789">Phone: (563) 555-6789</a><br />
-                                    <a className="contact-link"  href="mailto:toylendinglibrary@email.com">Email: toylendinglibrary@email.com</a>
+                                    <a className="contact-link"  href="mailto:info@toylendinglibrary.com">Email: info@toylendinglibrary.com</a>
                             </address>
-                            <strong>Hours of Operation:</strong>
-                            <ul className="contact-hours">
-                                <li>Tues. 3:30&ndash;6:00 pm</li>
-                                <li>Wed. 3:30&ndash;6:00 pm</li>
-                                <li>Sat. 10:00 am&ndash;2:00 pm</li>
-                            </ul>
+                                </div>
+                                <div className="col col-md-12">
+                                    <strong>Hours of Operation:</strong>
+                                    <ul className="contact-hours">
+                                        <li>Tues. 3:30&ndash;6:00 pm</li>
+                                        <li>Wed. 3:30&ndash;6:00 pm</li>
+                                        <li>Sat. 10:00 am&ndash;2:00 pm</li>
+                                    </ul>
+                                </div>
+                            </div> 
                         </div>
                         <div className="col col-md-8">
                             <div className="map-responsive">    
@@ -124,14 +136,14 @@ class Contact extends Component {
                             </div> 
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    <div className="row mt-4">
+                        <div className="col-xs-12 col-lg-8">
                             <h2>Contact Us</h2>
                             <p>Please let us know if you have any questions! We will get back to you via email or phone as soon as we can.</p>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col-xs-12 col-lg-8">
                             <ContactForm />
                         </div>
                     </div>
