@@ -47,19 +47,19 @@ class Header extends Component {
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink className="nav-link" to="/home">Home</NavLink>
+                                <NavLink className="nav-link" to="/home" onClick={this.toggleNav}>Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/toys">Toys</NavLink>
+                                <NavLink className="nav-link" to="/toys" onClick={this.toggleNav}>Toys</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/about">About Us</NavLink>
+                                <NavLink className="nav-link" to="/about" onClick={this.toggleNav}>About Us</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
+                                <NavLink className="nav-link" to="/signup" onClick={this.toggleNav}>Sign Up</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                                <NavLink className="nav-link" to="/contact" onClick={this.toggleNav}>Contact</NavLink>
                             </NavItem>
                         </Nav>
                         <Button onClick={this.toggleModal}className="btn ml-auto" color="warning">Login</Button>
