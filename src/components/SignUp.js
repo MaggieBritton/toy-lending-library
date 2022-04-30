@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardText, CardBody, CardTitle, CardGroup, CardSubtitle, Button, FormGroup, Label, Row, Col } from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardGroup, CardSubtitle, Button, FormGroup, Row, Col } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -70,59 +70,57 @@ const SignUpForm = () => {
             })}
             onSubmit={(values, { resetForm }) => {
                 console.log(values);
-                resetForm({ values: '' });
-                // document.getElementById("careAndUsePolicy").checked = false;
-                // document.getElementById("checkoutPolicy").checked = false;
+                resetForm();
             }}
         >
             <Form>
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col>
                         <FormGroup>
-                            <Label htmlFor="firstName">Parent/Guardian First Name</Label>
+                            <label htmlFor="firstName" className="signup-label col-xs-12">Parent/Guardian First Name</label>
                             <Field name="firstName" type="text" placeholder="First Name"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="firstName" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                     <Col>
                         <FormGroup>
-                            <Label htmlFor="lastName">Parent/Guardian Last Name</Label>
+                            <label htmlFor="lastName" className="signup-label col-xs-12">Parent/Guardian Last Name</label>
                             <Field name="lastName" type="text" placeholder="Last Name"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="lastName" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                 </Row>    
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col xs={8}>
                         <FormGroup>
-                            <Label htmlFor="address">Address</Label>
+                            <label htmlFor="address" className="signup-label col-xs-12">Address</label>
                             <Field name="address" type="text" placeholder="Address"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>   
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="address" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>   
                         </FormGroup>
                     </Col>
-                    <Col>
+                    <Col xs={4}>
                         <FormGroup>
-                            <Label htmlFor="apartment">Apt. (optional)</Label>
+                            <label htmlFor="apartment" className="signup-label col-xs-12">Apt. (optional)</label>
                             <Field name="apartment" type="text" placeholder="Apt." 
-                            />
+                            className="signup-field col-12"/>
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col xs={6}>
                         <FormGroup>
-                            <Label htmlFor="city">City</Label>
-                            <Field name="city" type="text" placeholder="City" />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            <label htmlFor="city" className="signup-label col-xs-12">City</label>
+                            <Field name="city" type="text" placeholder="City" className="signup-field col-12" />
+                            <ErrorMessage name="city" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
-                    <Col>
+                    <Col xs={2}>
                         <FormGroup>
-                            <Label htmlFor="state">State</Label>
-                            <Field as="select" name="state">
+                            <label htmlFor="state" className="signup-label col-xs-12">State</label>
+                            <Field as="select" name="state" className="signup-field col-12">
                                 <option disabled></option>
                                 <option>AL</option>
                                 <option>AK</option>
@@ -176,49 +174,79 @@ const SignUpForm = () => {
                                 <option>WI</option>
                                 <option>WY</option>
                             </Field>
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            <ErrorMessage name="state" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
-                    <Col>
+                    <Col xs={4}>
                         <FormGroup>
-                            <Label htmlFor="zip">Zip code</Label>
+                            <label htmlFor="zip" className="signup-label col-xs-12">Zip code</label>
                             <Field name="zip" type="text" placeholder="Zip Code" 
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="zip" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col>
                         <FormGroup>
-                            <Label htmlFor="phoneNum">Phone Number</Label>
-                            <Field name="phoneNum" type="tel"  placeholder="Phone Number"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            <label htmlFor="phoneNum" className="signup-label col-xs-12">Phone Number</label>
+                            <Field name="phoneNum" type="tel" placeholder="2345556789"
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="phoneNum" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                     <Col>
                         <FormGroup>
-                            <Label htmlFor="email">Email</Label>
-                            <Field name="email" type="email"  placeholder="Email"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            <label htmlFor="email" className="signup-label col-xs-12">Email</label>
+                            <Field name="email" type="email" placeholder="name@email.com"
+                            className="signup-field col-12"/>
+                            <ErrorMessage name="email" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col xs={9}>
                         <FormGroup>
-                            <Label htmlFor="child1Name">(1) Child's Full Name</Label>
-                            <Field name="child1Name" type="text"   placeholder="Child's Name"
-                            />
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                            <label htmlFor="child1Name" className="signup-label col-xs-12">(1) Child's Full Name</label>
+                            <Field name="child1Name" type="text" placeholder="Child's Name"
+                            className="signup-field col-12" />
+                            <ErrorMessage name="child1Name" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                     <Col xs={3}>
                         <FormGroup>
-                            <Label htmlFor="child1Age">Age</Label>
-                            <Field name="child1Age"  type="select">
+                            <label htmlFor="child1Age" className="signup-label col-xs-12">Age</label>
+                            <Field name="child1Age" as="select" className="signup-field col-12">
+                                <option disabled></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </Field>
+                            <ErrorMessage name="child1Age" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <Row form className="signup-form-row">
+                    <Col xs={9}>
+                        <FormGroup>
+                            <label htmlFor="child2Name" className="signup-label col-xs-12">(2) Child's Full Name (optional)</label>
+                            <Field name="child2Name" type="text" placeholder="Child's Name"
+                            className="signup-field col-12" />
+                        </FormGroup>
+                    </Col>
+                    <Col xs={3}>
+                        <FormGroup>
+                            <label htmlFor="child2Age" className="signup-label col-xs-12">Age</label>
+                            <Field name="child2Age" as="select" className="signup-field col-12">
                                 <option disabled></option>
                                 <option>1</option>
                                 <option>2</option>
@@ -236,48 +264,19 @@ const SignUpForm = () => {
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form>
+                <Row form className="signup-form-row">
                     <Col xs={9}>
                         <FormGroup>
-                            <Label htmlFor="child2Name">(2) Child's Full Name (optional)</Label>
-                            <Field name="child2Name" type="text"  placeholder="Child's Name"
-                            />
+                            <label htmlFor="child3Name" className="signup-label col-xs-12">(3) Child's Full Name (optional)</label>
+                            <Field name="child3Name" type="text" placeholder="Child's Name"
+                            className="signup-field col-12" />
                         </FormGroup>
                     </Col>
                     <Col xs={3}>
                         <FormGroup>
-                            <Label htmlFor="child2Age">Age</Label>
-                            <Field name="child2Age" type="select">
-                                <option disabled></option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                            </Field>
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Row form>
-                    <Col xs={9}>
-                        <FormGroup>
-                            <Label htmlFor="child3Name">(3) Child's Full Name (optional)</Label>
-                            <Field name="child3Name" type="text"   placeholder="Child's Name"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col xs={3}>
-                        <FormGroup>
-                            <Label htmlFor="child3Age">Age</Label>
+                            <label htmlFor="child3Age" className="signup-label col-xs-12">Age</label>
                             <Field name="child3Age"
-                            type="select">
+                            as="select" className="signup-field col-12">
                                 <option disabled></option>
                                 <option>1</option>
                                 <option>2</option>
@@ -295,33 +294,33 @@ const SignUpForm = () => {
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form>
+                <Row form className="signup-form-row mb-4">
                     <Col>
-                        <Label htmlFor="membership">Select your TLL membership plan.</Label>
-                        <Field name="membership"
-                        type="select">
+                        <label htmlFor="membership" className="signup-label col-xs-12">Select your TLL membership plan.</label>
+                        <Field name="membership" as="select" className="signup-field col-12">
                             <option disabled></option>
                             <option>3-month Membership ($15)</option>
                             <option>Yearly Membership ($50)</option>
                         </Field>
+                        <ErrorMessage name="membership" className="signup-error">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                     </Col>
                 </Row>
-                <Row form className="mt-3">
+                <Row form className="signup-form-row">
                     <Col>
-                        <FormGroup check>
-                            <Field type="checkbox" name="careAndUsePolicy" />{' '}
-                            <Label htmlFor="careAndUsePolicy" >I agree to check out age-appropriate toys for my child(ren) and supervise their play. I agree to take care of the toys and clean them with soap and water or a bleach wipe before returning them to TLL.</Label>
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                        <FormGroup className="checkbox-group">
+                            <Field type="checkbox" name="careAndUsePolicy" className="checkbox" />{' '}
+                            <label htmlFor="careAndUsePolicy" className="checkbox-label">I agree to check out age-appropriate toys for my child(ren) and supervise their play. I agree to take care of the toys and clean them with soap and water or a bleach wipe before returning them to TLL.</label>
+                            <ErrorMessage name="careAndUsePolicy">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row form className="mt-3">
+                <Row form className="signup-form-row">
                     <Col>
-                        <FormGroup check>
-                            <Field type="checkbox" name="checkoutPolicy" />{' '}
-                            <Label htmlFor="checkoutPolicy">I agree that toys may be checked out for two weeks at a time with the possibility of one renewal, if there is not a hold already placed on the toy.
-                            </Label>
-                            <ErrorMessage>{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
+                        <FormGroup className="checkbox-group">
+                            <Field type="checkbox" name="checkoutPolicy" className="checkbox"/>{' '}
+                            <label htmlFor="checkoutPolicy" className="checkbox-label">I agree that toys may be checked out for two weeks at a time with the possibility of one renewal, if there is not a hold already placed on the toy.
+                            </label>
+                            <ErrorMessage name="checkoutPolicy">{msg => <div className="signup-error">{msg}</div>}</ErrorMessage>
                         </FormGroup>
                     </Col>
                 </Row>
