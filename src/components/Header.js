@@ -47,19 +47,19 @@ class Header extends Component {
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink className="nav-link" to="/home" onClick={this.toggleNav}>Home</NavLink>
+                                <NavLink className="nav-link" to="/home" onClick={window.innerWidth < 768 ? this.toggleNav : undefined }>Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/toys" onClick={this.toggleNav}>Toys</NavLink>
+                                <NavLink className="nav-link" to="/toys" onClick={window.innerWidth < 768 ? this.toggleNav : undefined }>Toys</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/about" onClick={this.toggleNav}>About Us</NavLink>
+                                <NavLink className="nav-link" to="/about" onClick={window.innerWidth < 768 ? this.toggleNav : undefined }>About Us</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/signup" onClick={this.toggleNav}>Sign Up</NavLink>
+                                <NavLink className="nav-link" to="/signup" onClick={window.innerWidth < 768 ? this.toggleNav : undefined }>Sign Up</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/contact" onClick={this.toggleNav}>Contact</NavLink>
+                                <NavLink className="nav-link" to="/contact" onClick={window.innerWidth < 768 ? this.toggleNav : undefined }>Contact</NavLink>
                             </NavItem>
                         </Nav>
                         <Button onClick={this.toggleModal}className="btn ml-auto" color="warning">Login</Button>
@@ -98,4 +98,6 @@ class Header extends Component {
 
 export default Header;
 
-/* Find a way (using hooks?) to collapse menu upon click only in mobile view...no reloading/strange attempted collapse in desktop view. */
+/* Find a way (using hooks?) to collapse menu upon click only in mobile view...no reloading/strange attempted collapse in desktop view. 
+change the toggler icon to switch between bars and an x using ternary operator
+*/
