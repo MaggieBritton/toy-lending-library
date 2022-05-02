@@ -97,7 +97,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-/* Find a way (using hooks?) to collapse menu upon click only in mobile view...no reloading/strange attempted collapse in desktop view. 
-change the toggler icon to switch between bars and an x using ternary operator
-*/

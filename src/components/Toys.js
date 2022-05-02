@@ -127,9 +127,14 @@ const Toys = ({ inventoryItems })=> {
                     <div className="col">
                         <div className="row mt-4">
                             {inventoryItems.map((item, index) => {
+                                //if filterStatus is not null and the filterStatus of the item does not match the active status (available or checked out), do not render the item  
                                 if (filterStatus !== null && filterStatus !== item.checkedOut) return null;
+                                //if filterCategory is not null and the filterCategory of the item does not match the active category, do not render the item
                                 if (filterCategory !== null && filterCategory !== item.category) return null;
+                                //if fiterAge is not null and the filterAge of the item does not match the active age, do not render the item
                                 if (filterAge !== null && !item.age.includes(filterAge)) return null;
+
+                                //implied is to render all of the items that pass through these if statements
 
                                 return (
                                     <InventoryCard 
