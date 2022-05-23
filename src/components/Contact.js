@@ -41,7 +41,7 @@ const ContactForm = () => {
             <Form>
                 <Row form className="contact-form-row">
                     <label htmlFor="firstName" className="contact-label col-12">First Name</label>
-                    <Field name="firstName" type="text" placeholder="First Name" className="contact-field col-12" />  
+                    <Field name="firstName" id="firstName" type="text" placeholder="First Name" className="contact-field col-12" />  
                     <ErrorMessage name="firstName" >
                         {msg => <div className="contact-error">{msg}</div>}
                     </ErrorMessage>      
@@ -49,7 +49,7 @@ const ContactForm = () => {
                 
                 <Row form className="contact-form-row">
                     <label htmlFor="lastName" className="contact-label col-12">Last Name</label>
-                    <Field name="lastName" type="text" placeholder="Last Name"  className="contact-field col-12" />
+                    <Field name="lastName" id="lastName" type="text" placeholder="Last Name"  className="contact-field col-12" />
                     <ErrorMessage name="lastName" >
                         {msg => <div className="contact-error">{msg}</div>}
                     </ErrorMessage> 
@@ -57,7 +57,7 @@ const ContactForm = () => {
                 
                 <Row form className="contact-form-row">
                     <label htmlFor="phoneNum" className="contact-label col-12">Phone Number</label>
-                    <Field name="phoneNum" type="text" placeholder="2345556789" className="contact-field col-12" />
+                    <Field name="phoneNum" id="phoneNum" type="text" placeholder="2345556789" className="contact-field col-12" />
                     <ErrorMessage name="phoneNum" >
                         {msg => <div className="contact-error">{msg}</div>}
                     </ErrorMessage> 
@@ -65,7 +65,7 @@ const ContactForm = () => {
                 
                 <Row form className="contact-form-row">
                     <label htmlFor="email" className="contact-label col-12">Email</label>
-                    <Field name="email" type="email" placeholder="name@email.com" className="contact-field col-12" />
+                    <Field name="email" id="email" type="email" placeholder="name@email.com" className="contact-field col-12" />
                     <ErrorMessage name="email" >
                         {msg => <div className="contact-error">{msg}</div>}
                     </ErrorMessage> 
@@ -73,7 +73,7 @@ const ContactForm = () => {
                 
                 <Row form className="contact-form-row">
                     <label htmlFor="contactType" className="contact-label col-12">Contact Preference</label>
-                    <Field as="select" name="contactType" className="contact-field col-12">
+                    <Field as="select" name="contactType" id="contactType" className="contact-field col-12">
                         <option value="By Email">By Email</option>
                         <option value="By Phone">By Phone</option>
                     </Field>
@@ -81,7 +81,7 @@ const ContactForm = () => {
                 
                 <Row form className="contact-form-row">
                     <label htmlFor="message" className="contact-label col-12">Message</label>
-                    <Field as="textarea" name="message" rows="10" className="contact-field col-12" />
+                    <Field as="textarea" name="message" id="message" rows="10" className="contact-field col-12" />
                 </Row>
                 
 
