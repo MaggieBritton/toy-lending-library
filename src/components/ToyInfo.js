@@ -23,11 +23,10 @@ const ToyInfo = ({toy}) => {
                     </div>
                     <div className="col my-sm-auto">
                         <h1>{name}</h1>
-                        <h4>category: {category}</h4>
-                        <h4>age(s): {age.join(', ')}</h4>
-                        <h4>status: {checkedOut === true ? 'checked out' : 'available'}</h4>
-                        <h4>description:</h4>
-                        <p>{description}</p>
+                        <p className="toyInfo-text">category: {category}</p>
+                        <p className="toyInfo-text">age(s): {age.join(', ')}</p>
+                        <p className="toyInfo-text">status: {checkedOut === true ? 'checked out' : 'available'}</p>
+                        <p className="toyInfo-text">description: {description}</p>
                         
                     </div>
                 </div>

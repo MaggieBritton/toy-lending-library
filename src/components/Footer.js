@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <div className="row">
                     <div className="col text-center my-2">
-                        <small>&copy; 2022 M. Britton Designs </small>
+                        <small>&copy; 2022 Margaret Britton </small>
                     </div>
                 </div>
             </div>

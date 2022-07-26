@@ -29,7 +29,7 @@ const Toys = ({ inventoryItems })=> {
           <div className="container-fluid">
               <div className="row toyInventory-bg">
                   <div className="col my-auto">
-                      <h2 className="text-center">Toy Inventory</h2>
+                      <h1 className="text-center">Toy Inventory</h1>
                   </div>
                   <div className="col  pr-0">
                       <img className="inventory-img" src="assets/siteImages/orangeDumpTruck.jpg" alt="Orange Metal Dump Truck"/>
@@ -40,12 +40,12 @@ const Toys = ({ inventoryItems })=> {
               <div className="row">
                   <div className="col-12 col-md-4 col-lg-3 mt-4">
                       <div className="filter-heading-div">
-                          <h3 className="filter-heading">Filters</h3>
+                          <h2 className="filter-heading">Filters</h2>
                           <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetFilter()}>clear all</button>
                       </div>
 
                       <div className="filter-subheading-div">
-                        <h4 className="filter-heading">Category</h4>
+                        <h3 className="filter-heading">Category</h3>
                         <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetCategory()}>clear</button>
                       </div>
                       <button
@@ -85,7 +85,7 @@ const Toys = ({ inventoryItems })=> {
                       </button>
 
                       <div className="filter-subheading-div">
-                        <h4 className="filter-heading">Age</h4>
+                        <h3 className="filter-heading">Age</h3>
                         <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetAge()}>clear</button>
                       </div>
                       <button
@@ -110,7 +110,7 @@ const Toys = ({ inventoryItems })=> {
                       </button>
 
                       <div className="filter-subheading-div">
-                        <h4 className="filter-heading">Status</h4>
+                        <h3 className="filter-heading">Status</h3>
                         <button className="filter-btn btn btn-sm btn-outline-danger" onClick={()=>resetStatus()}>clear</button>
                       </div>
                       <button
@@ -150,11 +150,3 @@ const Toys = ({ inventoryItems })=> {
 };
 
 export default Toys;
-
-/*
-
-To Do:
-Add filters to Toy Inventory Page
-Add animation to cards when hovered on (slight wiggle or scale?)
-
-*/

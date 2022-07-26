@@ -15,8 +15,8 @@ const BecomeAMember = () => {
         <div className="container-fluid py-4 become-bg text-center">
             <div className="row">
                 <div className="col">
-                    <h4>Would you like to become a part of the TLL family?</h4>
-                    <h4>Become a member today!</h4>
+                    <h3>Would you like to become a part of the TLL family?
+                    <br /> Become a member today!</h3>
                     <Button className="button mt-2" onClick={()=> handleClick("/signup")}>Sign Up</Button>
                 </div>
             </div>
